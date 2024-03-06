@@ -1,12 +1,15 @@
 #pragma once
 
+#include <GL/glew.h>
+
 class Sprite
 {
 	public:
 		Sprite ();
 		~Sprite ();
 		void draw ();
-		void init (int x, int y, int width, int height);
+		void init (float spriteX, float spriteY, float spriteWidth, float spriteHeight);
 	private:
-		int sX, sY, sWidth, sHeight;
+		int x, y, width, height;
+		GLuint vboID;
 };

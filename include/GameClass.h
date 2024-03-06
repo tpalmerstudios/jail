@@ -3,6 +3,8 @@
 #include <SDL2/SDL.h>
 #include <GL/glew.h>
 
+#include "Sprite.h"
+
 enum class GameState {PLAY, PAUSE, EXIT};
 
 class Game
@@ -22,6 +24,7 @@ class Game
 		// Variables
 		SDL_Window* window;
 		GameState gameState;
+		Sprite sprite;
 
 		
 		int sdlWidth;
