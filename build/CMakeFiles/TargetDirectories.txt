@@ -1,0 +1,3 @@
+/home/tpalmerstudios/projects/jail/build/CMakeFiles/jail.dir
+/home/tpalmerstudios/projects/jail/build/CMakeFiles/edit_cache.dir
+/home/tpalmerstudios/projects/jail/build/CMakeFiles/rebuild_cache.dir

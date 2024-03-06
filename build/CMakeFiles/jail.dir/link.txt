@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/jail.dir/src/GameClass.cpp.o CMakeFiles/jail.dir/src/main.cpp.o -o jail  -lSDL2 
