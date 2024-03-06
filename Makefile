@@ -2,7 +2,7 @@ CXX = g++
 IDIR = ./include
 BUILDDIR = ./build
 SDL2CFLAGS := $(shell sdl2-config --cflags)
-SDL2LIBS := $(shell sdl2-config --libs)
+SDL2LIBS := -L./external/SDL -Wl,--enable-new-dtags -lSDL2
 CXXFLAGS = -Wall -pedantic -std=c++17 -I$(IDIR) $(SDL2CFLAGS) -g
 ODIR = src/obj
 
