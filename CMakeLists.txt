@@ -5,9 +5,16 @@ set (SRC_DIR "${PROJECT_SOURCE_DIR}/src/")
 set (INCLUDE_DIR "${PROJECT_SOURCE_DIR}/include/")
 set (SDL_INCLUDE_DIRS "${PROJECT_SOURCE_DIR}/external/SDL/include")
 
-#set (CMAKE_RUNTIME_OUTPUT_DIRECTORY "${PROJECT_SOURCE_DIR}/build/")
+set (CMAKE_RUNTIME_OUTPUT_DIRECTORY "${PROJECT_SOURCE_DIR}/build/")
+set (CMAKE_EXPORT_COMPILE_COMMANDS ON)
 file (GLOB_RECURSE HEADER_FILES "${INCLUDE_DIR}/*.h")
 file (GLOB_RECURSE SRC_FILES "${SRC_DIR}/*.cpp")
+
+if (EXISTS "${CMAKE_CURRENT_BINARY_DIR}/compile_commands.json")
+  EXECUTE_PROCESS (COMMAND ${CMAKE_COMMAND} -E copy_if_different
+    ${CMAKE_CURRENT_BINARY_DIR}/compile_commands.json
+    ${CMAKE_CURRENT_SOURCE_DIR}/compile_commands.json)
+endif ()
 
 include_directories(${SDL_INCLUDE_DIRS})
 
