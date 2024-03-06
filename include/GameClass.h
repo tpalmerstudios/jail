@@ -5,8 +5,8 @@ class Game
 {
 	private:
 		SDL_Window* window;
-		unsigned short int screenWidth = 1920;
-		unsigned short int screenHeight = 1080;
+		int screenWidth = 1920;
+		int screenHeight = 1080;
 	public:
 		Game ();
 		~Game ();
