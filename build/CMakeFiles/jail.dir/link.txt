@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/jail.dir/src/GameClass.cpp.o CMakeFiles/jail.dir/src/main.cpp.o -o jail  /usr/lib/x86_64-linux-gnu/libOpenGL.so /usr/lib/x86_64-linux-gnu/libGLX.so /usr/lib/x86_64-linux-gnu/libGLU.so -lSDL2 

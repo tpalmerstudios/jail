@@ -3,6 +3,7 @@ IDIR = ./include
 BUILDDIR = ./build
 SDL2CFLAGS := $(shell sdl2-config --cflags)
 SDL2LIBS := -L./external/SDL -Wl,--enable-new-dtags -lSDL2
+GLLIBS := -lglut
 CXXFLAGS = -Wall -pedantic -std=c++17 -I$(IDIR) $(SDL2CFLAGS) -g
 ODIR = src/obj
 
@@ -17,7 +18,7 @@ $(ODIR)/%.o: src/%.cpp | $(ODIR)
 
 jail: $(OBJ) | $(ODIR)
 	mkdir -p $(BUILDDIR)/
-	$(CXX) -o $(BUILDDIR)/$@ $^ $(CXXFLAGS) $(SDL2LIBS)
+	$(CXX) -o $(BUILDDIR)/$@ $^ $(CXXFLAGS) $(GLLIBS) $(SDL2LIBS)
 
 $(ODIR):
 	@echo "Folder $(ODIR) does not exist. Creating"
