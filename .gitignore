@@ -1,4 +1,5 @@
 *.o
 build/
-build/*
+build/
 .ycm_extra_conf.py
+.cache
