@@ -1,6 +1,8 @@
 cmake_minimum_required (VERSION 3.21)
 project (jail LANGUAGES CXX)
 
+find_package(OpenGL REQUIRED)
+find_package(GLUT)
 set (SRC_DIR "${PROJECT_SOURCE_DIR}/src/")
 set (INCLUDE_DIR "${PROJECT_SOURCE_DIR}/include/")
 set (SDL_INCLUDE_DIRS "${PROJECT_SOURCE_DIR}/external/SDL/include")
@@ -17,12 +19,11 @@ if (EXISTS "${CMAKE_CURRENT_BINARY_DIR}/compile_commands.json")
 endif ()
 
 include_directories(${SDL_INCLUDE_DIRS})
+include_directories(${OPENGL_INCLUDE_DIRS}  ${GLUT_INCLUDE_DIRS})
 
 add_executable (jail ${SRC_FILES} ${HEADER_FILES})
-
 target_include_directories(jail PUBLIC "${INCLUDE_DIR}")
-target_link_libraries(jail PUBLIC "${SDL_DIR}" SDL2)
-
+target_link_libraries(jail PUBLIC "${SDL_DIR}" "${OPENGL_LIBRARIES}" "${GLUT_LIBRARY}" SDL2)
 #packageProject(
 #  NAME ${PROJECT_NAME}
 #  VERSION ${PROJECT_VERSION}

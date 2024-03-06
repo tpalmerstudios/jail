@@ -1,16 +1,28 @@
 #include <SDL2/SDL.h>
-#include <GL/gl.h>
+#include <GL/glew.h>
+
+enum class GameState {PLAY, PAUSE, EXIT};
 
 class Game
 {
-	private:
-		SDL_Window* window;
-		int screenWidth = 1920;
-		int screenHeight = 1080;
 	public:
 		Game ();
 		~Game ();
 
 		int run ();
+
+	private:
+		// Functions
 		int init ();
+		int processInput ();
+		int drawGame ();
+		int gameLoop ();
+		// Variables
+		SDL_Window* window;
+		GameState gameState;
+
+		
+		int sdlWidth;
+		int sdlHeight;
+		
 };
