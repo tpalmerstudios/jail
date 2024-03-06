@@ -1,20 +1,11 @@
 #include <iostream>
-#include <string>
 
 #include <SDL2/SDL.h>
 #include <GL/glew.h>
 
 #include "GameClass.h"
+#include "Errors.h"
 
-void fatalError (std::string error)
-{
-	int input;
-	std::cout << error << std::endl;
-	std::cout << "Enter any key to quit...";
-
-	std::cin >> input;
-	SDL_Quit ();
-}
 
 Game::Game ()
 {
@@ -67,6 +58,15 @@ void Game::init ()
 	}
 
 	glClearColor (0.0f,0.0f,0.0f,1.0f);
+
+	initShaders ();
+}
+
+void Game::initShaders ()
+{
+	shaderProgram.compileShaders ("shaders/colorShading.vert", "shaders/colorShading.frag");
+	shaderProgram.addAttribute ("vertexPosition");
+	shaderProgram.linkShaders ();
 }
 
 void Game::drawGame ()
@@ -74,7 +74,9 @@ void Game::drawGame ()
 	glClearDepth (1.0);
 	glClear (GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	
+	shaderProgram.use ();
 	sprite.draw ();
+	shaderProgram.unuse ();
 	/***************************************************
 	glEnableClientState (GL_COLOR_ARRAY);
 	glBegin (GL_TRIANGLES);

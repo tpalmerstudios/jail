@@ -4,6 +4,7 @@
 #include <GL/glew.h>
 
 #include "Sprite.h"
+#include "GLSLShader.h"
 
 enum class GameState {PLAY, PAUSE, EXIT};
 
@@ -21,10 +22,12 @@ class Game
 		void processInput ();
 		void drawGame ();
 		void gameLoop ();
+		void initShaders ();
 		// Variables
 		SDL_Window* window;
 		GameState gameState;
 		Sprite sprite;
+		GLSLShader shaderProgram;
 
 		
 		int sdlWidth;
