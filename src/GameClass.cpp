@@ -4,7 +4,6 @@
 #include <SDL2/SDL.h>
 #include <GL/glew.h>
 
-
 #include "GameClass.h"
 
 void fatalError (std::string error)
@@ -16,6 +15,7 @@ void fatalError (std::string error)
 	std::cin >> input;
 	SDL_Quit ();
 }
+
 Game::Game ()
 {
 	window = nullptr;
@@ -29,14 +29,13 @@ Game::~Game ()
 	gameState = GameState::EXIT;
 }
 
-int Game::run ()
+void Game::run ()
 {
 	init ();
 	gameLoop ();
-	return 0;
 }
 
-int Game::init ()
+void Game::init ()
 {
 	SDL_Init (SDL_INIT_EVERYTHING);
 	window = SDL_CreateWindow (
@@ -45,15 +44,16 @@ int Game::init ()
 		SDL_WINDOWPOS_CENTERED,
 		sdlWidth,
 		sdlHeight,
-		SDL_WINDOW_OPENGL);
+		SDL_WINDOW_OPENGL );
 	
-	if (window == nullptr)
+	if (!window)
 	{
 		fatalError ("SDL Window could not be created.");
 	}
 
+	SDL_GL_SetAttribute (SDL_GL_DOUBLEBUFFER, 1);
 	SDL_GLContext glContext = SDL_GL_CreateContext (window);
-	if (glContext == nullptr)
+	if (!glContext)
 	{
 		fatalError ("SDL_GL context could not be created!");
 	}
@@ -63,46 +63,53 @@ int Game::init ()
 	{
 		fatalError ("Could not initialize glew");
 	}
-	SDL_GL_SetAttribute (SDL_GL_DOUBLEBUFFER, 1);
 
 	glClearColor (0.0f,0.0f,0.0f,1.0f);
-	return 0;
 }
 
-int Game::drawGame ()
+void Game::drawGame ()
 {
 	glClearDepth (1.0);
 	glClear (GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
+	/***************************************************
+	glEnableClientState (GL_COLOR_ARRAY);
+	glBegin (GL_TRIANGLES);
+	glColor3f (1.0f, 0.0f, 0.0f);
+
+	glVertex2f (0, 0);
+	glVertex2f (0, 1);
+	glVertex2f (-1, 1);
+	glEnd ();
+	**************************************************/
+
 	SDL_GL_SwapWindow (window);
-	return 0;
 }
 
-int Game::processInput ()
+void Game::processInput ()
 {
 	SDL_Event action;
 	while (SDL_PollEvent (&action))
 	{
 		switch (action.type)
 		{
-			case SDL_MOUSEMOTION:
-				std::cout << action.motion.x << " " << action.motion.y << std::endl;
-				break;
 			case SDL_QUIT:
 				gameState = GameState::EXIT;
 				break;
 
+			case SDL_MOUSEMOTION:
+				std::cout << action.motion.x << " " << action.motion.y << std::endl;
+				break;
 		}
 	}
-	return 0;
 }
 
-int Game::gameLoop ()
+void Game::gameLoop ()
 {
 	while (gameState != GameState::EXIT)
 	{
 		processInput ();
+		drawGame ();
 	}
-	return 0;
 }
 

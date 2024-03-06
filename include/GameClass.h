@@ -1,3 +1,5 @@
+#pragma once
+
 #include <SDL2/SDL.h>
 #include <GL/glew.h>
 
@@ -9,14 +11,14 @@ class Game
 		Game ();
 		~Game ();
 
-		int run ();
+		void run ();
 
 	private:
 		// Functions
-		int init ();
-		int processInput ();
-		int drawGame ();
-		int gameLoop ();
+		void init ();
+		void processInput ();
+		void drawGame ();
+		void gameLoop ();
 		// Variables
 		SDL_Window* window;
 		GameState gameState;
