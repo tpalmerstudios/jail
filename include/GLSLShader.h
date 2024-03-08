@@ -15,6 +15,7 @@ class GLSLShader
 		void linkShaders ();
 		void use ();
 		void unuse ();
+		GLuint getUniLoc (const std::string& uniformName);
 	private:
 		GLuint programID;
 		GLuint vertID;

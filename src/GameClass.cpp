@@ -7,12 +7,13 @@
 #include "Errors.h"
 
 
-Game::Game ()
+Game::Game () : 
+	sdlWidth (980), 
+	sdlHeight (540), 
+	gameState (GameState::PLAY), 
+	shaderTime (0),
+	window (nullptr)
 {
-	window = nullptr;
-	sdlWidth = 980;
-	sdlHeight = 540;
-	gameState = GameState::PLAY;
 }
 
 Game::~Game ()
@@ -24,7 +25,7 @@ void Game::run ()
 {
 	init ();
 
-	sprite.init (-1.0, -1.0, 1.0, 1.0f);
+	sprite.init (-1.0f, -1.0f, 2.0f, 2.0f);
 	gameLoop ();
 }
 
@@ -66,6 +67,7 @@ void Game::initShaders ()
 {
 	shaderProgram.compileShaders ("shaders/colorShading.vert", "shaders/colorShading.frag");
 	shaderProgram.addAttribute ("vertexPosition");
+	shaderProgram.addAttribute ("vertexColor");
 	shaderProgram.linkShaders ();
 }
 
@@ -75,6 +77,10 @@ void Game::drawGame ()
 	glClear (GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	
 	shaderProgram.use ();
+
+	GLuint timeLocation = shaderProgram.getUniLoc ("time");
+	glUniform1f (timeLocation, shaderTime);
+
 	sprite.draw ();
 	shaderProgram.unuse ();
 	/***************************************************
@@ -115,6 +121,7 @@ void Game::gameLoop ()
 	{
 		processInput ();
 		drawGame ();
+		shaderTime += 0.1;
 	}
 }
 

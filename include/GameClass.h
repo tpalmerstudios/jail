@@ -32,5 +32,6 @@ class Game
 		
 		int sdlWidth;
 		int sdlHeight;
+		float shaderTime;
 		
 };
