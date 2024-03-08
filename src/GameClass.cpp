@@ -5,7 +5,6 @@
 
 #include "Gameclass.h"
 #include "errors.h"
-#include "Image_Loader.h"
 
 /* TODO: Move Game::init () into constructor.
  * Initialize screen and Game State*/
