@@ -4,10 +4,10 @@ project (jail LANGUAGES CXX)
 find_package (OpenGL REQUIRED)
 find_package (GLEW REQUIRED)
 
-set (SRC_DIR "${PROJECT_SOURCE_DIR}/src/")
+add_compile_options("-Wextra" "-ggdb")
 
+set (SRC_DIR "${PROJECT_SOURCE_DIR}/src/")
 set (INCLUDE_DIR "${PROJECT_SOURCE_DIR}/include/")
-set (SDL_INCLUDE_DIRS "${PROJECT_SOURCE_DIR}/external/SDL/include")
 
 set (CMAKE_RUNTIME_OUTPUT_DIRECTORY "${PROJECT_SOURCE_DIR}/build/")
 set (CMAKE_EXPORT_COMPILE_COMMANDS ON)
@@ -21,11 +21,10 @@ if (EXISTS "${CMAKE_CURRENT_BINARY_DIR}/build/compile_commands.json")
     ${CMAKE_CURRENT_SOURCE_DIR}/build/compile_commands.json)
 endif ()
 
-include_directories (${SDL_INCLUDE_DIRS})
 include_directories (${OPENGL_INCLUDE_DIRS})
 include_directories (${GLEW_INCLUDE_DIRS})
 
-add_executable (jail ${SRC_FILES} ${HEADER_FILES})
+add_executable (jail ${HEADER_FILES} ${SRC_FILES})
 
 target_include_directories(jail PUBLIC "${INCLUDE_DIR}")
 target_link_libraries(jail PUBLIC "${SDL_DIR}" "${OPENGL_LIBRARIES}" "${GLEW_LIBRARIES}" SDL2)
