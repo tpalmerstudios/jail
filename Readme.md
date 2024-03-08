@@ -1,13 +1,12 @@
 # Jail Game Engine
 
 Based on MakingGamesWithBen Youtube Channel
-[@makinggameswithben](@makinggameswithben)
+[@makinggameswithben](https://youtube.com/@makinggameswithben)
 
-Also ssloy/tinyraycaster
-(ssloy/tinyraycaster)[https://github.com/ssloy/tinyraycaster]
+Also [ssloy/tinyraycaster](https://github.com/ssloy/tinyraycaster)
 
 And my interpretation of it.
-(tpalmerstudios/Jeli)[https://github.com/tpalmerstudios/Jeli]
+[tpalmerstudios/Jeli](https://github.com/tpalmerstudios/Jeli)
 
 Will hopefully use this as my main Game making repo
 
