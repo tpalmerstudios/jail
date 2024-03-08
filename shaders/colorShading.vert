@@ -1,6 +1,5 @@
 #version 150
 
-in vec2 fragmentPosition;
 in vec2 vertexPosition;
 in vec4 vertexColor;
 
