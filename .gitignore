@@ -1,4 +1,6 @@
 *.o
 build/
+build/*
 .ycm_extra_conf.py
 .cache/
+.cache/*
