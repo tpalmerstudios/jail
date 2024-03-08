@@ -1,5 +1,3 @@
-#pragma once
-
 #include <string>
 
 #ifndef ACTOR_H

@@ -15,11 +15,11 @@ class GLSLShader
 		void linkShaders ();
 		void use ();
 		void unuse ();
-		GLuint getUniLoc (const std::string& uniformName);
+		GLint getUniLoc (const std::string& uniformName);
 	private:
-		GLuint programID;
-		GLuint vertID;
-		GLuint fragID;
+		GLuint _programID;
+		GLuint _vertID;
+		GLuint _fragID;
 		int numAttribute;
 		void compileShader (const std::string& filePath, GLuint id);
 };

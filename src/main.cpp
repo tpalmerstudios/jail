@@ -1,6 +1,6 @@
 #include <iostream>
 
-#include "GameClass.h"
+#include "Gameclass.h"
 
 int main (int argc, char** argv)
 {

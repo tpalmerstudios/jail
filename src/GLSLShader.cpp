@@ -3,9 +3,9 @@
 #include <string>
 
 #include "GLSLShader.h"
-#include "Errors.h"
+#include "errors.h"
 
-GLSLShader::GLSLShader () : programID (0), vertID (0), fragID (0), numAttribute (0)
+GLSLShader::GLSLShader () : _programID (0), _vertID (0), _fragID (0), numAttribute (0)
 {
 }
 
@@ -14,12 +14,12 @@ GLSLShader::~GLSLShader ()
 }
 void GLSLShader::addAttribute (const std::string& attributeName)
 {
-	glBindAttribLocation (programID, numAttribute++, attributeName.c_str());
+	glBindAttribLocation (_programID, numAttribute++, attributeName.c_str());
 }
 
-GLuint GLSLShader::getUniLoc (const std::string& uniformName)
+GLint GLSLShader::getUniLoc (const std::string& uniformName)
 {
-	GLuint location = glGetUniformLocation (programID, uniformName.c_str());
+	GLint location = glGetUniformLocation (_programID, uniformName.c_str());
 	if (location == GL_INVALID_INDEX)
 	{
 		fatalError ("Uniform " + uniformName + " not found in shader!");
@@ -29,7 +29,7 @@ GLuint GLSLShader::getUniLoc (const std::string& uniformName)
 
 void GLSLShader::use ()
 {
-	glUseProgram (programID);
+	glUseProgram (_programID);
 	for (int i = 0; i < numAttribute; i++)
 	{
 		glEnableVertexAttribArray (i);
@@ -50,20 +50,20 @@ void GLSLShader::compileShaders (const std::string& vertFile, const std::string&
 	// Vertex and fragment shaders are successfully compiled.
 	// Now time to link them together into a program.
 	// Get a program object.
-	programID = glCreateProgram();
+	_programID = glCreateProgram();
 
-	vertID = glCreateShader (GL_VERTEX_SHADER);
-	if (vertID == 0)
+	_vertID = glCreateShader (GL_VERTEX_SHADER);
+	if (_vertID == 0)
 	{
 		fatalError ("Vertex Shader failed to be created");
 	}
-	fragID = glCreateShader (GL_FRAGMENT_SHADER);
-	if (fragID == 0)
+	_fragID = glCreateShader (GL_FRAGMENT_SHADER);
+	if (_fragID == 0)
 	{
 		fatalError ("Fragment Shader failed to be created");
 	}
-	compileShader (vertFile, vertID);
-	compileShader (fragFile, fragID);
+	compileShader (vertFile, _vertID);
+	compileShader (fragFile, _fragID);
 
 }
 
@@ -111,37 +111,37 @@ void GLSLShader::compileShader (const std::string& filePath, GLuint id)
 void GLSLShader::linkShaders ()
 {
 	// Attach our shaders to our program
-	glAttachShader(programID, vertID);
-	glAttachShader(programID, fragID);
+	glAttachShader(_programID, _vertID);
+	glAttachShader(_programID, _fragID);
 
 	// Link our program
-	glLinkProgram(programID);
+	glLinkProgram(_programID);
 
 	// Note the different functions here: glGetProgram* instead of glGetShader*.
 	GLint isLinked = 0;
-	glGetProgramiv(programID, GL_LINK_STATUS, (int *)&isLinked);
+	glGetProgramiv(_programID, GL_LINK_STATUS, (int *)&isLinked);
 	if (isLinked == GL_FALSE)
 	{
 		GLint maxLength = 0;
-		glGetProgramiv(programID, GL_INFO_LOG_LENGTH, &maxLength);
+		glGetProgramiv(_programID, GL_INFO_LOG_LENGTH, &maxLength);
 
 		// The maxLength includes the NULL character
 		std::vector<char> errorLog(maxLength);
-		glGetProgramInfoLog(programID, maxLength, &maxLength, &errorLog[0]);
+		glGetProgramInfoLog(_programID, maxLength, &maxLength, &errorLog[0]);
 
 		// We don't need the program anymore.
-		glDeleteProgram(programID);
+		glDeleteProgram(_programID);
 		// Don't leak shaders either.
-		glDeleteShader(vertID);
-		glDeleteShader(fragID);
+		glDeleteShader(_vertID);
+		glDeleteShader(_fragID);
 
 		std::printf ("%s\n", &errorLog[0]);
 		fatalError ("Shader failed to link!");
 	}
 
 	// Always detach shaders after a successful link.
-	glDetachShader(programID, vertID);
-	glDetachShader(programID, fragID);
-	glDeleteShader(vertID);
-	glDeleteShader(fragID);
+	glDetachShader(_programID, _vertID);
+	glDetachShader(_programID, _fragID);
+	glDeleteShader(_vertID);
+	glDeleteShader(_fragID);
 }

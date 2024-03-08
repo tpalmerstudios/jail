@@ -1,17 +1,17 @@
-#include "Sprite.h"
+#include "sprite.h"
 #include "Vertex.h"
 
 #include <cstddef>
 
 Sprite::Sprite ()
 {
-	vboID = 0;
+	_vboID = 0;
 }
 
 Sprite::~Sprite ()
 {
-	if (vboID != 0)
-		glDeleteBuffers (1, &vboID);
+	if (_vboID != 0)
+		glDeleteBuffers (1, &_vboID);
 }
 
 void Sprite::init (float spriteX, float spriteY, float spriteWidth, float spriteHeight)
@@ -21,9 +21,9 @@ void Sprite::init (float spriteX, float spriteY, float spriteWidth, float sprite
 	width = spriteWidth;
 	height = spriteHeight;
 
-	if (vboID == 0)
+	if (_vboID == 0)
 	{
-		glGenBuffers (1, &vboID);
+		glGenBuffers (1, &_vboID);
 	}
 	vertex vData [6];
 	vData [0].position.x = x;
@@ -54,7 +54,7 @@ void Sprite::init (float spriteX, float spriteY, float spriteWidth, float sprite
 	vData [1].color.r = 0;
 	vData [2].color.g = 127;
 
-	glBindBuffer (GL_ARRAY_BUFFER, vboID);
+	glBindBuffer (GL_ARRAY_BUFFER, _vboID);
 	glBufferData (GL_ARRAY_BUFFER, sizeof (vData), vData, GL_STATIC_DRAW);
 	glBindBuffer (GL_ARRAY_BUFFER, 0);
 
@@ -62,7 +62,7 @@ void Sprite::init (float spriteX, float spriteY, float spriteWidth, float sprite
 
 void Sprite::draw ()
 {
-	glBindBuffer (GL_ARRAY_BUFFER, vboID);
+	glBindBuffer (GL_ARRAY_BUFFER, _vboID);
 	glEnableVertexAttribArray (0);
 
 	// Position

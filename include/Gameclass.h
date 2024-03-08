@@ -1,9 +1,10 @@
-#pragma once
+#ifndef GAMECLASS_H
+#define GAMECLASS_H
 
 #include <SDL2/SDL.h>
 #include <GL/glew.h>
 
-#include "Sprite.h"
+#include "sprite.h"
 #include "GLSLShader.h"
 
 enum class GameState {PLAY, PAUSE, EXIT};
@@ -35,3 +36,5 @@ class Game
 		float shaderTime;
 		
 };
+
+#endif // GAMECLASS_H

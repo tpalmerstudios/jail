@@ -11,5 +11,5 @@ class Sprite
 		void init (float spriteX, float spriteY, float spriteWidth, float spriteHeight);
 	private:
 		int x, y, width, height;
-		GLuint vboID;
+		GLuint _vboID;
 };

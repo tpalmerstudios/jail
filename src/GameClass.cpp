@@ -3,8 +3,8 @@
 #include <SDL2/SDL.h>
 #include <GL/glew.h>
 
-#include "GameClass.h"
-#include "Errors.h"
+#include "Gameclass.h"
+#include "errors.h"
 
 
 Game::Game () : 
