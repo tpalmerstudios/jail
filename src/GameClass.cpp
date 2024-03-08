@@ -6,7 +6,8 @@
 #include "Gameclass.h"
 #include "errors.h"
 
-
+/* TODO: Move Game::init () into constructor.
+ * Initialize screen and Game State*/
 Game::Game () : 
 	sdlWidth (980), 
 	sdlHeight (540), 
@@ -21,11 +22,18 @@ Game::~Game ()
 	gameState = GameState::EXIT;
 }
 
+/* Sets initial variable and gives control to gameLoop*/
 void Game::run ()
 {
+	// Starts SDL screen
 	init ();
 
+	// Currently the sprite is the size of the screen
 	sprite.init (-1.0f, -1.0f, 2.0f, 2.0f);
+
+	// Potentially add data from a save game. Load it. Then start game loop
+
+	// Draws Game and Processes Input
 	gameLoop ();
 }
 
