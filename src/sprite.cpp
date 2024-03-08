@@ -7,7 +7,17 @@ Sprite::Sprite ()
 {
 	_vboID = 0;
 }
-
+/* Alternat Sprite ()
+ * Sprite::Sprite (float x, float y, float width, float width) : _vboID (0)
+ * {
+ * 	glGenBuffers (1, &_vboID);
+ * 	if (_vboID == 0)
+ * 		fatalError ("Buffer could not be created");
+ *
+ *
+ * }
+ *
+*/
 Sprite::~Sprite ()
 {
 	if (_vboID != 0)

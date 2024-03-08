@@ -1,3 +1,9 @@
+/**************************************
+ *  * sprite.h
+ *  * Author: tpalmerstudios (Tim Palmer)
+ *  * Contact: obsoleteTiger @ protonmail.com
+ *  * Created On: March 8, 2024
+ * *************************************/
 #include <string>
 
 #ifndef ACTOR_H

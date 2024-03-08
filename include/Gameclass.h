@@ -1,3 +1,13 @@
+/*****************************************
+ * Gameclass.h
+ * Game Class Definition
+ * Responsible for Input, Output, Shaders
+ * The main controller of the Game
+ *
+ * Game State Enum Definition
+ *
+ * ***************/
+
 #ifndef GAMECLASS_H
 #define GAMECLASS_H
 
@@ -12,9 +22,13 @@ enum class GameState {PLAY, PAUSE, EXIT};
 class Game
 {
 	public:
+		// Constructor
+		// Move init to Game ()
 		Game ();
+		// Destructor
 		~Game ();
 
+		// Accessible by main.cpp
 		void run ();
 
 	private:
@@ -24,6 +38,7 @@ class Game
 		void drawGame ();
 		void gameLoop ();
 		void initShaders ();
+
 		// Variables
 		SDL_Window* window;
 		GameState gameState;
