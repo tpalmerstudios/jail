@@ -28,13 +28,3 @@ bool IOManager::isLoadFile (std::string sFilePath, std::vector<unsigned char>& b
 	return true;
 }
 
-GLTexture ImageLoader::loadPNG (std::string sFilePath)
-{
-	GLTexture gTexture = {};
-	std::vector<unsigned char> texOutput;
-	std::vector<unsigned char> texInput;
-
-	unsigned long texWidth, texHeight;
-
-	int picoError = decodePNG (texOutput, texWidth, texHeight, );
-}

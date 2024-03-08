@@ -5,12 +5,13 @@
 
 #include "Gameclass.h"
 #include "errors.h"
+#include "Image_Loader.h"
 
 /* TODO: Move Game::init () into constructor.
  * Initialize screen and Game State*/
 Game::Game () : 
-	sdlWidth (980), 
-	sdlHeight (540), 
+	_sdlWidth (980), 
+	_sdlHeight (540), 
 	gameState (GameState::PLAY), 
 	shaderTime (0),
 	window (nullptr)
@@ -32,7 +33,7 @@ void Game::run ()
 	sprite.init (-1.0f, -1.0f, 2.0f, 2.0f);
 
 	// Potentially add data from a save game. Load it. Then start game loop
-
+	//_playerTex = ImageLoader::loadPNG ("/home/tpalmerstudios/projects/jail/textures/Enemys/Enemy_Candy1.png");
 	// Draws Game and Processes Input
 	gameLoop ();
 }
@@ -44,8 +45,8 @@ void Game::init ()
 		"Jail Engine",
 		SDL_WINDOWPOS_CENTERED,
 		SDL_WINDOWPOS_CENTERED,
-		sdlWidth,
-		sdlHeight,
+		_sdlWidth,
+		_sdlHeight,
 		SDL_WINDOW_OPENGL );
 	
 	if (!window)

@@ -15,6 +15,7 @@
 #include <GL/glew.h>
 
 #include "sprite.h"
+#include "texture.h"
 #include "GLSLShader.h"
 
 enum class GameState {PLAY, PAUSE, EXIT};
@@ -45,9 +46,10 @@ class Game
 		Sprite sprite;
 		GLSLShader shaderProgram;
 
+		GLTexture _playerTex;
 		
-		int sdlWidth;
-		int sdlHeight;
+		int _sdlWidth;
+		int _sdlHeight;
 		float shaderTime;
 		
 };
