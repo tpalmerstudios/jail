@@ -35,7 +35,10 @@ void Sprite::init (float spriteX, float spriteY, float spriteWidth, float sprite
 	{
 		glGenBuffers (1, &_vboID);
 	}
+	// 2 Triangles
 	vertex vData [6];
+
+	// Triangle 1
 	vData [0].position.x = x;
 	vData [0].position.y = y;
 
@@ -45,14 +48,19 @@ void Sprite::init (float spriteX, float spriteY, float spriteWidth, float sprite
 	vData [2].position.x = x;
 	vData [2].position.y = y + height;
 
+	// Triagle 2 
+	// 2 & 3 are the same
 	vData [3].position.x = x;
 	vData [3].position.y = y + height;
 
+	// 1 & 4 are the same
 	vData [4].position.x = x + width;
 	vData [4].position.y = y;
 
 	vData [5].position.x = x + width;
 	vData [5].position.y = y + height;
+
+	// Load colors into array
 	for (int i = 0; i < 6; i++)
 	{
 		vData [i].color.r = 255;
@@ -62,7 +70,9 @@ void Sprite::init (float spriteX, float spriteY, float spriteWidth, float sprite
 	}
 
 	vData [1].color.r = 0;
+	vData [4].color.r = 0;
 	vData [2].color.g = 127;
+	vData [3].color.g = 127;
 
 	glBindBuffer (GL_ARRAY_BUFFER, _vboID);
 	glBufferData (GL_ARRAY_BUFFER, sizeof (vData), vData, GL_STATIC_DRAW);

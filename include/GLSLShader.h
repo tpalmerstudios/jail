@@ -24,12 +24,15 @@ class GLSLShader
 		// Variables accessible Universally
 		GLint getUniLoc (const std::string& uniformName);
 	private:
+		// Used as a sort of Pointer whenever using the shader
 		GLuint _programID;
 		GLuint _vertID;
 		GLuint _fragID;
+		// How many attributes are used by the shaders
 		int numAttribute;
 
 
+		// Code for doing one shader. Called by compileShaders to do both
 		void compileShader (const std::string& filePath, GLuint id);
 };
 
