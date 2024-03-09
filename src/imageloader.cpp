@@ -1,4 +1,5 @@
 #include "Image_Loader.h"
+#include "PicoPNG.h"
 #include "texture.h"
 #include "IO_Manager.h"
 #include "errors.h"
@@ -11,7 +12,8 @@ GLTexture ImageLoader::loadPNG (std::string sFilePath)
 	std::vector<unsigned char> texInput;
 
 	unsigned long texWidth, texHeight;
-	if (!(IOManager::isLoadFile (sFilePath, texInput)))
+
+	if (IOManager::isLoadFile (sFilePath, texInput) == false)
 	{
 		fatalError ("Failed to load PNG file to buffer!");
 	}
@@ -24,7 +26,7 @@ GLTexture ImageLoader::loadPNG (std::string sFilePath)
 
 	glGenTextures (1, &(gTexture.id));
 	glBindTexture (GL_TEXTURE_2D, gTexture.id);
-	glTexImage2D (GL_TEXTURE_2D, 0, GL_RGBA, texWidth, texHeight, 0, GL_RGBA, GL_UNSIGNED_BYTE, &(texOutput));
+	glTexImage2D (GL_TEXTURE_2D, 0, GL_RGBA, texWidth, texHeight, 0, GL_RGBA, GL_UNSIGNED_BYTE, &(texOutput [0]));
 	glTexParameteri (GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
 	glTexParameteri (GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
 	glTexParameteri (GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);

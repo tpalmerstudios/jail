@@ -4,8 +4,6 @@
 #include <vector>
 #include <string>
 
-#include "PicoPNG.h"
-
 class IOManager
 {
 	public:

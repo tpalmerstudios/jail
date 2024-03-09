@@ -36,43 +36,33 @@ void Sprite::init (float spriteX, float spriteY, float spriteWidth, float sprite
 		glGenBuffers (1, &_vboID);
 	}
 	// 2 Triangles
-	vertex vData [6];
+	Vertex vData [6];
 
-	// Triangle 1
-	vData [0].position.x = x;
-	vData [0].position.y = y;
+	vData [0].setPosition (x, y);
+	vData [0].setUV (0.0f, 0.0f);
 
-	vData [1].position.x = x + width;
-	vData [1].position.y = y;
-
-	vData [2].position.x = x;
-	vData [2].position.y = y + height;
-
-	// Triagle 2 
-	// 2 & 3 are the same
-	vData [3].position.x = x;
-	vData [3].position.y = y + height;
-
-	// 1 & 4 are the same
-	vData [4].position.x = x + width;
-	vData [4].position.y = y;
-
-	vData [5].position.x = x + width;
-	vData [5].position.y = y + height;
+	vData [1].setPosition (x + width, y);
+	vData [1].setUV (1.0f, 0.0f);
+	
+	vData [2].setPosition (x, y + height);
+	vData [2].setUV (0.0f, 1.0f);
+	vData [3].setPosition (x, y + height);
+	vData [3].setUV (0.0f, 1.0f);
+	
+	vData [4].setPosition (x + width, y);
+	vData [4].setUV (1.0f, 0.0f);
+	
+	vData [5].setPosition (x + width, y + height);
+	vData [5].setUV (1.0f, 1.0f);
 
 	// Load colors into array
 	for (int i = 0; i < 6; i++)
 	{
-		vData [i].color.r = 255;
-		vData [i].color.g = 0;
-		vData [i].color.b = 255;
-		vData [i].color.a = 255;
+		vData [i].setColor (255, 0, 255, 255);
 	}
 
-	vData [1].color.r = 0;
-	vData [4].color.r = 0;
-	vData [2].color.g = 127;
-	vData [3].color.g = 127;
+	vData [4].setColor (0, 0, 255, 255);
+	vData [2].setColor (0x3A, 127, 255, 255);
 
 	glBindBuffer (GL_ARRAY_BUFFER, _vboID);
 	glBufferData (GL_ARRAY_BUFFER, sizeof (vData), vData, GL_STATIC_DRAW);
@@ -86,11 +76,12 @@ void Sprite::draw ()
 	glEnableVertexAttribArray (0);
 
 	// Position
-	glVertexAttribPointer (0, 2, GL_FLOAT, GL_FALSE, sizeof (vertex), (void*) offsetof (vertex, position));
+	glVertexAttribPointer (0, 2, GL_FLOAT, GL_FALSE, sizeof (Vertex), (void*) offsetof (Vertex, position));
 
 	//Color
-	glVertexAttribPointer (1, 4, GL_UNSIGNED_BYTE, GL_TRUE, sizeof (vertex), (void*) offsetof (vertex, color));
+	glVertexAttribPointer (1, 4, GL_UNSIGNED_BYTE, GL_TRUE, sizeof (Vertex), (void*) offsetof (Vertex, color));
 
+	glVertexAttribPointer (2, 2, GL_FLOAT, GL_FALSE, sizeof (Vertex), (void*) offsetof (Vertex, uv));
 	// Send it to to the screen
 	glDrawArrays (GL_TRIANGLES, 0, 6);
 

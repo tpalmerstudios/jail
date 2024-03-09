@@ -4,6 +4,7 @@
 #include <GL/glew.h>
 
 #include "Gameclass.h"
+#include "Image_Loader.h"
 #include "errors.h"
 
 /* TODO: Move Game::init () into constructor.
@@ -32,7 +33,7 @@ void Game::run ()
 	sprite.init (-1.0f, -1.0f, 2.0f, 2.0f);
 
 	// Potentially add data from a save game. Load it. Then start game loop
-	//_playerTex = ImageLoader::loadPNG ("/home/tpalmerstudios/projects/jail/textures/Enemys/Enemy_Candy1.png");
+	_playerTex = ImageLoader::loadPNG ("textures/Enemys/Enemy_Candy1.png");
 	// Draws Game and Processes Input
 	gameLoop ();
 }
@@ -66,7 +67,7 @@ void Game::init ()
 		fatalError ("Could not initialize glew");
 	}
 
-	glClearColor (0.0f,0.0f,0.0f,1.0f);
+	glClearColor (0.0f,0.0f,1.0f,1.0f);
 
 	initShaders ();
 }
@@ -76,6 +77,7 @@ void Game::initShaders ()
 	shaderProgram.compileShaders ("shaders/colorShading.vert", "shaders/colorShading.frag");
 	shaderProgram.addAttribute ("vertexPosition");
 	shaderProgram.addAttribute ("vertexColor");
+	shaderProgram.addAttribute ("vertexUV");
 	shaderProgram.linkShaders ();
 }
 
@@ -86,10 +88,17 @@ void Game::drawGame ()
 	
 	shaderProgram.use ();
 
+	glActiveTexture (GL_TEXTURE0);
+	glBindTexture (GL_TEXTURE_2D, _playerTex.id);
+	GLint textureLocation = shaderProgram.getUniLoc ("mySampler");
+	glUniform1i (textureLocation, 0);
+
 	GLuint timeLocation = shaderProgram.getUniLoc ("time");
 	glUniform1f (timeLocation, shaderTime);
 
 	sprite.draw ();
+
+	glBindTexture (GL_TEXTURE_2D, 0);
 	shaderProgram.unuse ();
 	/***************************************************
 	glEnableClientState (GL_COLOR_ARRAY);

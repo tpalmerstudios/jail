@@ -15,10 +15,35 @@ struct Color
 	GLubyte b;
 	GLubyte a;
 };
+struct UV
+{
+	float u;
+	float v;
+};
 
-struct vertex
+struct Vertex
 {
 	Position position;
 	Color color;
+	UV uv; // Usually between 0 and 1
+	void setPosition (float x, float y)
+	{
+		position.x = x;
+		position.y = y;
+	}
+	
+	void setColor (GLubyte r, GLubyte g, GLubyte b, GLubyte a)
+	{
+		color.r = r;
+		color.g = g;
+		color.b = b;
+		color.a = a;
+	}
+
+	void setUV (float u, float v)
+	{
+		uv.u = u;
+		uv.v = v;
+	}
 };
 
