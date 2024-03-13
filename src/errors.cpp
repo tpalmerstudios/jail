@@ -1,3 +1,8 @@
+/************************************
+ * Errors Handler
+ * TODO: Consider making this a class with a constructor and destructor
+ * 
+ */
 #include "errors.h"
 
 #include <iostream>
@@ -20,3 +25,25 @@ void fatalError (std::string error)
 	exit (1);
 }
 
+/*
+ * class Error
+ * {
+ * 		public:
+ * 		Error (int error)
+ * 		{
+ * 			std::cout
+ * 		}
+ * 		Error (std::string error)
+ * 		{
+ * 		}
+ * 		~Error ();
+ * 		{
+ * 		SDL_Quit ();
+ * 		exit (errorCode ());
+ * 		}
+ * 		private:
+ * 		std::string errorOutput(int);
+ * 		int code (std::string);
+ * 		std::map errorCodes;
+ * };
+ */

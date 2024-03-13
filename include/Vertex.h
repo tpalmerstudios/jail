@@ -1,3 +1,5 @@
+/* Vertex to pass to 
+ */
 #pragma once
 
 #include <GL/glew.h>
