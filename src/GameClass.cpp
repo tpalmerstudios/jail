@@ -4,7 +4,6 @@
 #include <GL/glew.h>
 
 #include "Gameclass.h"
-#include "Image_Loader.h"
 #include "errors.h"
 
 /* TODO: Move Game::init () into constructor.
@@ -30,10 +29,17 @@ void Game::run ()
 	init ();
 
 	// Currently the sprite is the size of the screen
-	sprite.init (-1.0f, -1.0f, 2.0f, 2.0f);
+	_sprites.push_back (new Sprite ());
+	_sprites.back ()->init (-1.0f, -1.0f, 1.0f, 1.0f, "textures/Enemys/Enemy_Candy1.png");
 
+	_sprites.push_back (new Sprite ());
+	_sprites.back ()->init (0.0f, -1.0f, 1.0f, 1.0f, "textures/Enemys/Enemy_Candy1.png");
+	_sprites.push_back (new Sprite ());
+	_sprites.back ()->init (-1.0f, 0.0f, 1.0f, 1.0f, "textures/Enemys/Enemy_Candy1.png");
 	// Potentially add data from a save game. Load it. Then start game loop
-	_playerTex = ImageLoader::loadPNG ("textures/Enemys/Enemy_Candy1.png");
+	_sprites.push_back (new Sprite ());
+	_sprites.back ()->init (0.0f, 0.0f, 1.0f, 1.0f, "textures/Enemys/Enemy_Candy1.png");
+	//_playerTex = ImageLoader::loadPNG ("textures/Enemys/Enemy_Candy1.png");
 	// Draws Game and Processes Input
 	gameLoop ();
 }
@@ -67,7 +73,7 @@ void Game::init ()
 		fatalError ("Could not initialize glew");
 	}
 
-	glClearColor (0.0f,0.0f,1.0f,1.0f);
+	glClearColor (0.0f,0.0f,0.0f,1.0f);
 
 	initShaders ();
 }
@@ -89,14 +95,17 @@ void Game::drawGame ()
 	shaderProgram.use ();
 
 	glActiveTexture (GL_TEXTURE0);
-	glBindTexture (GL_TEXTURE_2D, _playerTex.id);
+	// glBindTexture (GL_TEXTURE_2D, _playerTex.id);
 	GLint textureLocation = shaderProgram.getUniLoc ("mySampler");
 	glUniform1i (textureLocation, 0);
 
 	GLuint timeLocation = shaderProgram.getUniLoc ("time");
 	glUniform1f (timeLocation, shaderTime);
 
-	sprite.draw ();
+	for (int i = 0; i < _sprites.size (); i ++)
+	{
+		_sprites [i]->draw ();
+	}
 
 	glBindTexture (GL_TEXTURE_2D, 0);
 	shaderProgram.unuse ();
@@ -126,7 +135,7 @@ void Game::processInput ()
 				break;
 
 			case SDL_MOUSEMOTION:
-				std::cout << action.motion.x << " " << action.motion.y << std::endl;
+				// std::cout << action.motion.x << " " << action.motion.y << std::endl;
 				break;
 		}
 	}

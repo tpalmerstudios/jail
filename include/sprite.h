@@ -13,6 +13,9 @@
 #define SPRITE_H
 
 #include <GL/glew.h>
+#include "texture.h"
+
+#include <string>
 
 class Sprite
 {
@@ -20,10 +23,11 @@ class Sprite
 		Sprite ();
 		~Sprite ();
 		void draw ();
-		void init (float spriteX, float spriteY, float spriteWidth, float spriteHeight);
+		void init (float x, float y, float width, float height, std::string textPath);
 	private:
-		int x, y, width, height;
+		int _x, _y, _width, _height;
 		GLuint _vboID;
+		GLTexture _texture;
 };
 
 #endif // SPRITE_H

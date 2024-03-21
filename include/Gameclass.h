@@ -13,6 +13,7 @@
 
 #include <SDL2/SDL.h>
 #include <GL/glew.h>
+#include <vector>
 
 #include "sprite.h"
 #include "texture.h"
@@ -43,11 +44,9 @@ class Game
 		// Variables
 		SDL_Window* window;
 		GameState gameState;
-		Sprite sprite;
+		std::vector <Sprite*> _sprites;
 		GLSLShader shaderProgram;
 
-		GLTexture _playerTex;
-		
 		int _sdlWidth;
 		int _sdlHeight;
 		float shaderTime;

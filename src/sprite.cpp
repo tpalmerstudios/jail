@@ -1,4 +1,5 @@
 #include "sprite.h"
+#include "Resource.h"
 #include "Vertex.h"
 
 #include <cstddef>
@@ -24,12 +25,14 @@ Sprite::~Sprite ()
 		glDeleteBuffers (1, &_vboID);
 }
 
-void Sprite::init (float spriteX, float spriteY, float spriteWidth, float spriteHeight)
+void Sprite::init (float x, float y, float width, float height,std::string filePath)
 {
-	x = spriteX;
-	y = spriteY;
-	width = spriteWidth;
-	height = spriteHeight;
+	_x = x;
+	_y = y;
+	_width = width;
+	_height = height;
+
+	_texture = Resource::getTexture (filePath);
 
 	if (_vboID == 0)
 	{
@@ -38,21 +41,21 @@ void Sprite::init (float spriteX, float spriteY, float spriteWidth, float sprite
 	// 2 Triangles
 	Vertex vData [6];
 
-	vData [0].setPosition (x, y);
+	vData [0].setPosition (_x, _y);
 	vData [0].setUV (0.0f, 0.0f);
 
-	vData [1].setPosition (x + width, y);
+	vData [1].setPosition (_x + width, _y);
 	vData [1].setUV (1.0f, 0.0f);
 	
-	vData [2].setPosition (x, y + height);
+	vData [2].setPosition (_x, _y + height);
 	vData [2].setUV (0.0f, 1.0f);
-	vData [3].setPosition (x, y + height);
+	vData [3].setPosition (_x, _y + height);
 	vData [3].setUV (0.0f, 1.0f);
 	
-	vData [4].setPosition (x + width, y);
+	vData [4].setPosition (_x + width, _y);
 	vData [4].setUV (1.0f, 0.0f);
 	
-	vData [5].setPosition (x + width, y + height);
+	vData [5].setPosition (_x + width, _y + height);
 	vData [5].setUV (1.0f, 1.0f);
 
 	// Load colors into array
@@ -72,6 +75,7 @@ void Sprite::init (float spriteX, float spriteY, float spriteWidth, float sprite
 
 void Sprite::draw ()
 {
+	glBindTexture (GL_TEXTURE_2D, _texture.id);
 	glBindBuffer (GL_ARRAY_BUFFER, _vboID);
 	glEnableVertexAttribArray (0);
 

@@ -4,7 +4,8 @@
 #include <GL/glew.h>
 struct GLTexture
 {
-	GLuint id;
+	// GLuint id;
+	unsigned int id;
 	int width;
 	int height;
 };
