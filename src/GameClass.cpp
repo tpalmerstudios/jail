@@ -13,7 +13,8 @@ Game::Game () :
 	_sdlHeight (540), 
 	gameState (GameState::PLAY), 
 	shaderTime (0),
-	window (nullptr)
+	window (nullptr),
+	_maxFPS (60.0f)
 {
 }
 
@@ -47,6 +48,7 @@ void Game::run ()
 void Game::init ()
 {
 	SDL_Init (SDL_INIT_EVERYTHING);
+	SDL_GL_SetAttribute (SDL_GL_DOUBLEBUFFER, 1);
 	window = SDL_CreateWindow (
 		"Jail Engine",
 		SDL_WINDOWPOS_CENTERED,
@@ -60,7 +62,6 @@ void Game::init ()
 		fatalError ("SDL Window could not be created.");
 	}
 
-	SDL_GL_SetAttribute (SDL_GL_DOUBLEBUFFER, 1);
 	SDL_GLContext glContext = SDL_GL_CreateContext (window);
 	if (!glContext)
 	{
@@ -74,6 +75,9 @@ void Game::init ()
 	}
 
 	glClearColor (0.0f,0.0f,0.0f,1.0f);
+
+	// V Sync 1, 0 off
+	SDL_GL_SetSwapInterval (1);
 
 	initShaders ();
 }
@@ -145,9 +149,61 @@ void Game::gameLoop ()
 {
 	while (gameState != GameState::EXIT)
 	{
+		float startTicks = SDL_GetTicks ();
 		processInput ();
-		drawGame ();
 		shaderTime += 0.1;
+		drawGame ();
+		calculateFPS ();
+		static int frameCount;
+		frameCount++;
+		if (frameCount == 60)
+		{
+			std::cout << _fps << std::endl;
+			frameCount = 0;
+		}
+		float frameTicks = SDL_GetTicks () - startTicks;
+		if (1000.0f / _maxFPS > frameTicks)
+		{
+			SDL_Delay (1000.0f / _maxFPS - frameTicks);
+		}
+	}
+}
+
+void Game::calculateFPS ()
+{
+	static const int NUM_SAMPLES = 10;
+	static float frameTimes [NUM_SAMPLES];
+	static int currentFrame = 0;
+
+	static float prevTicks = SDL_GetTicks ();
+	float currentTicks;
+	float frameAverageTime = 0;
+	int count;
+	currentTicks = SDL_GetTicks ();
+	_frameTime = currentTicks - prevTicks;
+	prevTicks = currentTicks;
+	frameTimes [currentFrame % NUM_SAMPLES] = _frameTime;
+	currentFrame++;
+	if (currentFrame < NUM_SAMPLES)
+	{
+		count = currentFrame;
+	}
+	else
+	{
+		count = NUM_SAMPLES;
+	}
+	for (int i = 0; i < count; i++)
+	{
+		frameAverageTime += frameTimes [i];
+	}
+	frameAverageTime /= count;
+	if (frameAverageTime > 0)
+	{
+		_fps = 1000.0f / frameAverageTime;
+	}
+	else
+	{
+		_fps = 60.0f;
 	}
 }
 

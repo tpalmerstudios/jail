@@ -40,6 +40,7 @@ class Game
 		void drawGame ();
 		void gameLoop ();
 		void initShaders ();
+		void calculateFPS ();
 
 		// Variables
 		SDL_Window* window;
@@ -50,6 +51,9 @@ class Game
 		int _sdlWidth;
 		int _sdlHeight;
 		float shaderTime;
+		float _fps;
+		float _frameTime;
+		float _maxFPS;
 		
 };
 
