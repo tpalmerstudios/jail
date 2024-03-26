@@ -74,6 +74,7 @@ void Game::init ()
 		fatalError ("Could not initialize glew");
 	}
 
+	std::printf ("*** OpenGL Version: %s\n", glGetString (GL_VERSION));
 	glClearColor (0.0f,0.0f,0.0f,1.0f);
 
 	// V Sync 1, 0 off

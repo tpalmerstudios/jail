@@ -7,12 +7,16 @@ find_package (GLEW REQUIRED)
 add_compile_options("-Wextra" "-ggdb")
 
 set (SRC_DIR "${PROJECT_SOURCE_DIR}/src/")
+set (ENGINE_SRC_DIR "${PROJECT_SOURCE_DIR}/engine/src/")
 set (INCLUDE_DIR "${PROJECT_SOURCE_DIR}/include/")
+set (ENGINE_INCLUDE_DIR "${PROJECT_SOURCE_DIR}/engine/include/")
 
 set (CMAKE_RUNTIME_OUTPUT_DIRECTORY "${PROJECT_SOURCE_DIR}/build/")
 set (CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
+file (GLOB_RECURSE ENGINE_HEADER_FILES "${ENGINE_INCLUDE_DIR}/*.h")
 file (GLOB_RECURSE HEADER_FILES "${INCLUDE_DIR}/*.h")
+file (GLOB_RECURSE ENGINE_SRC_FILES "${ENGINE_SRC_DIR}/*.cpp")
 file (GLOB_RECURSE SRC_FILES "${SRC_DIR}/*.cpp")
 
 if (EXISTS "${CMAKE_CURRENT_BINARY_DIR}/build/compile_commands.json")
@@ -24,9 +28,10 @@ endif ()
 include_directories (${OPENGL_INCLUDE_DIRS})
 include_directories (${GLEW_INCLUDE_DIRS})
 
-add_executable (jail ${HEADER_FILES} ${SRC_FILES})
+add_executable (jail ${ENGINE_HEADER_FILES} ${HEADER_FILES} ${ENGINE_SRC_FILES} ${SRC_FILES})
 
 target_include_directories(jail PUBLIC "${INCLUDE_DIR}")
+target_include_directories(jail PUBLIC "${ENGINE_INCLUDE_DIR}")
 target_link_libraries(jail PUBLIC "${SDL_DIR}" "${OPENGL_LIBRARIES}" "${GLEW_LIBRARIES}" SDL2)
 
 #packageProject(
