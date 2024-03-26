@@ -7,17 +7,19 @@ find_package (GLEW REQUIRED)
 add_compile_options("-Wextra" "-ggdb")
 
 set (SRC_DIR "${PROJECT_SOURCE_DIR}/src/")
-set (ENGINE_SRC_DIR "${PROJECT_SOURCE_DIR}/engine/src/")
 set (INCLUDE_DIR "${PROJECT_SOURCE_DIR}/include/")
-set (ENGINE_INCLUDE_DIR "${PROJECT_SOURCE_DIR}/engine/include/")
+
+set (ENGINE_DIR "${PROJECT_SOURCE_DIR}/JailEngine/")
 
 set (CMAKE_RUNTIME_OUTPUT_DIRECTORY "${PROJECT_SOURCE_DIR}/build/")
 set (CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
-file (GLOB_RECURSE ENGINE_HEADER_FILES "${ENGINE_INCLUDE_DIR}/*.h")
-file (GLOB_RECURSE HEADER_FILES "${INCLUDE_DIR}/*.h")
-file (GLOB_RECURSE ENGINE_SRC_FILES "${ENGINE_SRC_DIR}/*.cpp")
-file (GLOB_RECURSE SRC_FILES "${SRC_DIR}/*.cpp")
+file (GLOB HEADER_FILES "${INCLUDE_DIR}/*.h")
+
+file (GLOB SRC_FILES "${SRC_DIR}/*.cpp")
+file (GLOB ENGINE_SRC_FILES "${ENGINE_DIR}/src/*.cpp")
+
+add_subdirectory (JailEngine)
 
 if (EXISTS "${CMAKE_CURRENT_BINARY_DIR}/build/compile_commands.json")
   EXECUTE_PROCESS (COMMAND ${CMAKE_COMMAND} -E copy_if_different
@@ -28,20 +30,9 @@ endif ()
 include_directories (${OPENGL_INCLUDE_DIRS})
 include_directories (${GLEW_INCLUDE_DIRS})
 
-add_executable (jail ${ENGINE_HEADER_FILES} ${HEADER_FILES} ${ENGINE_SRC_FILES} ${SRC_FILES})
+add_executable (jail ${HEADER_FILES} ${SRC_FILES} ${ENGINE_SRC_FILES})
+set_target_properties (JailEngine PROPERTIES LINKER_LANGUAGE CXX)
+target_include_directories(jail PUBLIC "${ENGINE_DIR}/include/" "${INCLUDE_DIR}")
 
-target_include_directories(jail PUBLIC "${INCLUDE_DIR}")
-target_include_directories(jail PUBLIC "${ENGINE_INCLUDE_DIR}")
-target_link_libraries(jail PUBLIC "${SDL_DIR}" "${OPENGL_LIBRARIES}" "${GLEW_LIBRARIES}" SDL2)
+target_link_libraries(jail PUBLIC JailEngine "${SDL_DIR}" "${OPENGL_LIBRARIES}" "${GLEW_LIBRARIES}" SDL2)
 
-#packageProject(
-#  NAME ${PROJECT_NAME}
-#  VERSION ${PROJECT_VERSION}
-#  NAMESPACE ${PROJECT_NAME}
-#  BINARY_DIR ${PROJECT_BINARY_DIR}
-#  INCLUDE_DIR ${PROJECT_SOURCE_DIR}/include
-#  INCLUDE_DESTINATION include/${PROJECT_NAME}-${PROJECT_VERSION}
-#  VERSION_HEADER "${VERSION_HEADER_LOCATION}"
-#  COMPATIBILITY SameMajorVersion
-#  DEPENDENCIES "sdl2"
-#)
