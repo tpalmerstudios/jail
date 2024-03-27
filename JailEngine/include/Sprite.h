@@ -17,17 +17,20 @@
 
 #include <string>
 
-class Sprite
+namespace Jail
 {
-	public:
-		Sprite ();
-		~Sprite ();
-		void draw ();
-		void init (float x, float y, float width, float height, std::string textPath);
-	private:
-		int _x, _y, _width, _height;
-		GLuint _vboID;
-		GLTexture _texture;
-};
+	class Sprite
+	{
+		public:
+			Sprite ();
+			~Sprite ();
+			void draw ();
+			void init (float x, float y, float width, float height, std::string textPath);
+		private:
+			int _x, _y, _width, _height;
+			GLuint _vboID;
+			GLTexture _texture;
+	};
+}
 
 #endif // SPRITE_H

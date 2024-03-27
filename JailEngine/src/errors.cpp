@@ -13,6 +13,7 @@
 /* Error Sent to STDOUT.
  * SDL systems quit.
  * System quit.*/
+namespace Jail {
 void fatalError (std::string error)
 {
 	// This allows pause to see final frame before exit
@@ -47,3 +48,4 @@ void fatalError (std::string error)
  * 		std::map errorCodes;
  * };
  */
+}

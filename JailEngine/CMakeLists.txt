@@ -5,6 +5,7 @@ add_compile_options("-Wextra" "-ggdb")
 
 find_package (OpenGL REQUIRED)
 find_package (GLEW REQUIRED)
+find_package (glm CONFIG REQUIRED)
 
 set (INCLUDE_DIR, "${PROJECT_SOURCE_DIR}/include/")
 set (SRC_DIR, "${PROJECT_SOURCE_DIR}/src/")
@@ -25,5 +26,6 @@ add_library (JailEngine SHARED ${ENGINE_HEADER_FILES})
 
 target_sources (JailEngine PUBLIC ${ENGINE_HEADER_FILES})
 target_link_libraries (JailEngine PUBLIC OpenGL SDL2 GLEW::GLEW)
+target_link_libraries (JailEngine PRIVATE glm::glm)
 
 

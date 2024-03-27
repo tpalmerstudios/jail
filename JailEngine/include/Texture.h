@@ -2,11 +2,14 @@
 #define TEXTURE_H
 
 #include <GL/glew.h>
-struct GLTexture
+namespace Jail
 {
-	// GLuint id;
-	unsigned int id;
-	int width;
-	int height;
-};
+	struct GLTexture
+	{
+		// GLuint id;
+		unsigned int id;
+		int width;
+		int height;
+	};
+}
 #endif //TEXTURE_H

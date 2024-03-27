@@ -5,6 +5,7 @@
 #include "GLSLShader.h"
 #include "Errors.h"
 
+namespace Jail {
 GLSLShader::GLSLShader () : _programID (0), _vertID (0), _fragID (0), numAttribute (0)
 {
 }
@@ -144,4 +145,5 @@ void GLSLShader::linkShaders ()
 	glDetachShader(_programID, _fragID);
 	glDeleteShader(_vertID);
 	glDeleteShader(_fragID);
+}
 }

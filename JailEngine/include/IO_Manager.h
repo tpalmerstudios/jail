@@ -4,10 +4,12 @@
 #include <vector>
 #include <string>
 
-class IOManager
+namespace Jail
 {
-	public:
-		static bool isLoadFile (std::string sFilePath, std::vector<unsigned char>& buffer);
-};
-
+	class IOManager
+	{
+		public:
+			static bool isLoadFile (std::string sFilePath, std::vector<unsigned char>& buffer);
+	};
+}
 #endif // IO_MANAGER_H

@@ -4,14 +4,17 @@
 #include "TextureCache.h"
 #include <string>
 
-class Resource
+namespace Jail
 {
-	public:
-		static GLTexture getTexture (std::string filePath);
-		//static GLuint boundTexture;
-	private:
-		static TextureCache _textureCache;
+	class Resource
+	{
+		public:
+			static GLTexture getTexture (std::string filePath);
+			//static GLuint boundTexture;
+		private:
+			static TextureCache _textureCache;
 
-};
+	};
+}
 
 #endif // RESOURCE_CACHE_H

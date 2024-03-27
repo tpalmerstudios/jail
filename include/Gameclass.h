@@ -43,10 +43,10 @@ class Game
 		void calculateFPS ();
 
 		// Variables
-		Window _window;
-		GameState gameState;
-		std::vector <Sprite*> _sprites;
-		GLSLShader shaderProgram;
+		Jail::Window _window;
+		GameState _gameState;
+		std::vector <Jail::Sprite*> _sprites;
+		Jail::GLSLShader _shaderProgram;
 
 		int _sdlWidth;
 		int _sdlHeight;

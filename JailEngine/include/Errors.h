@@ -8,6 +8,8 @@
 #define ERRORS_H
 #include <string>
 
-extern void fatalError (std::string errorString);
-
+namespace Jail
+{
+	extern void fatalError (std::string errorString);
+}
 #endif // ERRORS_H

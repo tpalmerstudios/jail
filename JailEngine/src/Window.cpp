@@ -1,6 +1,7 @@
 #include "Window.h"
 #include "Errors.h"
 
+namespace Jail {
 void Window::swapBuffer ()
 {
 	SDL_GL_SwapWindow (_sdlWindow);
@@ -53,4 +54,5 @@ int Window::create (std::string windowName, unsigned int screenWidth, unsigned i
 	SDL_GL_SetSwapInterval (1);
 
 	return 0;
+}
 }

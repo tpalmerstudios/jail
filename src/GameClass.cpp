@@ -4,6 +4,7 @@
 #include <GL/glew.h>
 
 #include "Gameclass.h"
+#include <Jail.h>
 #include <Errors.h>
 
 /* TODO: Move Game::init () into constructor.
@@ -11,7 +12,7 @@
 Game::Game () : 
 	_sdlWidth (980), 
 	_sdlHeight (540), 
-	gameState (GameState::PLAY), 
+	_gameState (GameState::PLAY), 
 	shaderTime (0),
 	_maxFPS (60.0f)
 {
@@ -19,7 +20,7 @@ Game::Game () :
 
 Game::~Game ()
 {
-	gameState = GameState::EXIT;
+	_gameState = GameState::EXIT;
 }
 
 /* Sets initial variable and gives control to gameLoop*/
@@ -29,15 +30,15 @@ void Game::run ()
 	init ();
 
 	// Currently the sprite is the size of the screen
-	_sprites.push_back (new Sprite ());
+	_sprites.push_back (new Jail::Sprite ());
 	_sprites.back ()->init (-1.0f, -1.0f, 1.0f, 1.0f, "textures/Enemys/Enemy_Candy1.png");
 
-	_sprites.push_back (new Sprite ());
+	_sprites.push_back (new Jail::Sprite ());
 	_sprites.back ()->init (0.0f, -1.0f, 1.0f, 1.0f, "textures/Enemys/Enemy_Candy1.png");
-	_sprites.push_back (new Sprite ());
+	_sprites.push_back (new Jail::Sprite ());
 	_sprites.back ()->init (-1.0f, 0.0f, 1.0f, 1.0f, "textures/Enemys/Enemy_Candy1.png");
 	// Potentially add data from a save game. Load it. Then start game loop
-	_sprites.push_back (new Sprite ());
+	_sprites.push_back (new Jail::Sprite ());
 	_sprites.back ()->init (0.0f, 0.0f, 1.0f, 1.0f, "textures/Enemys/Enemy_Candy1.png");
 	//_playerTex = ImageLoader::loadPNG ("textures/Enemys/Enemy_Candy1.png");
 	// Draws Game and Processes Input
@@ -46,8 +47,7 @@ void Game::run ()
 
 void Game::init ()
 {
-	SDL_Init (SDL_INIT_EVERYTHING);
-	SDL_GL_SetAttribute (SDL_GL_DOUBLEBUFFER, 1);
+	Jail::init ();
 	_window.create ("Jail Engine", _sdlWidth, _sdlHeight, 0);
 
 	initShaders ();
@@ -55,11 +55,11 @@ void Game::init ()
 
 void Game::initShaders ()
 {
-	shaderProgram.compileShaders ("shaders/colorShading.vert", "shaders/colorShading.frag");
-	shaderProgram.addAttribute ("vertexPosition");
-	shaderProgram.addAttribute ("vertexColor");
-	shaderProgram.addAttribute ("vertexUV");
-	shaderProgram.linkShaders ();
+	_shaderProgram.compileShaders ("shaders/colorShading.vert", "shaders/colorShading.frag");
+	_shaderProgram.addAttribute ("vertexPosition");
+	_shaderProgram.addAttribute ("vertexColor");
+	_shaderProgram.addAttribute ("vertexUV");
+	_shaderProgram.linkShaders ();
 }
 
 void Game::drawGame ()
@@ -67,14 +67,14 @@ void Game::drawGame ()
 	glClearDepth (1.0);
 	glClear (GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	
-	shaderProgram.use ();
+	_shaderProgram.use ();
 
 	glActiveTexture (GL_TEXTURE0);
 	// glBindTexture (GL_TEXTURE_2D, _playerTex.id);
-	GLint textureLocation = shaderProgram.getUniLoc ("mySampler");
+	GLint textureLocation = _shaderProgram.getUniLoc ("mySampler");
 	glUniform1i (textureLocation, 0);
 
-	GLuint timeLocation = shaderProgram.getUniLoc ("time");
+	GLuint timeLocation = _shaderProgram.getUniLoc ("time");
 	glUniform1f (timeLocation, shaderTime);
 
 	for (unsigned long i = 0; i < _sprites.size (); i ++)
@@ -83,7 +83,7 @@ void Game::drawGame ()
 	}
 
 	glBindTexture (GL_TEXTURE_2D, 0);
-	shaderProgram.unuse ();
+	_shaderProgram.unuse ();
 	/***************************************************
 	glEnableClientState (GL_COLOR_ARRAY);
 	glBegin (GL_TRIANGLES);
@@ -106,7 +106,7 @@ void Game::processInput ()
 		switch (action.type)
 		{
 			case SDL_QUIT:
-				gameState = GameState::EXIT;
+				_gameState = GameState::EXIT;
 				break;
 
 			case SDL_MOUSEMOTION:
@@ -118,7 +118,7 @@ void Game::processInput ()
 
 void Game::gameLoop ()
 {
-	while (gameState != GameState::EXIT)
+	while (_gameState != GameState::EXIT)
 	{
 		float startTicks = SDL_GetTicks ();
 		processInput ();

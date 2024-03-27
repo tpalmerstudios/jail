@@ -4,10 +4,13 @@
 #include <string>
 #include "Texture.h"
 
-class ImageLoader
+namespace Jail
 {
-	public:
-		static GLTexture loadPNG (std::string sFilePath);
-};
+	class ImageLoader
+	{
+		public:
+			static GLTexture loadPNG (std::string sFilePath);
+	};
+}
 
 #endif // IMAGE_LOADER_H

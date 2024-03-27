@@ -1,5 +1,5 @@
 #include "PicoPNG.h"
-
+namespace Jail {
 /*
 decodePNG: The picoPNG function, decodes a PNG file buffer in memory, into a raw pixel buffer.
 out_image: output parameter, this will contain the raw pixels after decoding.
@@ -530,5 +530,6 @@ int decodePNG(std::vector<unsigned char>& out_image, unsigned long& image_width,
   PNG decoder; decoder.decode(out_image, in_png, in_size, convert_to_rgba32);
   image_width = decoder.info.width; image_height = decoder.info.height;
   return decoder.error;
+}
 }
 

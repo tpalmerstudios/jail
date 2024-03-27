@@ -4,6 +4,7 @@
 
 #include <cstddef>
 
+namespace Jail {
 Sprite::Sprite ()
 {
 	_vboID = 0;
@@ -95,3 +96,5 @@ void Sprite::draw ()
 	// Unbind GPU VBO
 	glBindBuffer (GL_ARRAY_BUFFER, 0);
 }
+}
+

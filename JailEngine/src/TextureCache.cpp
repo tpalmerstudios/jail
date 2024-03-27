@@ -3,6 +3,7 @@
 #include "TextureCache.h"
 #include "Image_Loader.h"
 
+namespace Jail {
 GLTexture TextureCache::getTexture (std::string filePath)
 {
 	// map iterator
@@ -21,3 +22,5 @@ GLTexture TextureCache::getTexture (std::string filePath)
 	std::cout << "Used Cached Texture" << std::endl;
 	return mapI->second;
 }
+}
+

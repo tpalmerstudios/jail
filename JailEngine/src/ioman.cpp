@@ -1,6 +1,7 @@
 #include <fstream>
 #include "IO_Manager.h"
 
+namespace Jail {
 bool IOManager::isLoadFile (std::string sFilePath, std::vector<unsigned char>& buffer)
 {
 	std::ifstream file (sFilePath, std::ios::binary);
@@ -26,5 +27,6 @@ bool IOManager::isLoadFile (std::string sFilePath, std::vector<unsigned char>& b
 	file.read ((char *)&(buffer [0]), iFileSize);
 	file.close ();
 	return true;
+}
 }
 

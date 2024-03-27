@@ -5,6 +5,7 @@
 #include "Errors.h"
 #include <vector>
 
+namespace Jail {
 GLTexture ImageLoader::loadPNG (std::string sFilePath)
 {
 	GLTexture gTexture = {};
@@ -38,4 +39,5 @@ GLTexture ImageLoader::loadPNG (std::string sFilePath)
 	gTexture.width = texWidth;
 	gTexture.height = texHeight;
 	return gTexture;
+}
 }
