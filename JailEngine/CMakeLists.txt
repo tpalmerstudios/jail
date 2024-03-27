@@ -21,8 +21,9 @@ endif ()
 file (GLOB ENGINE_HEADER_FILES "${INCLUDE_DIR}/*.h")
 file (GLOB SRC_FILES "${SRC_DIR}/*.cpp")
 
-add_library (JailEngine)
+add_library (JailEngine SHARED ${ENGINE_HEADER_FILES})
 
 target_sources (JailEngine PUBLIC ${ENGINE_HEADER_FILES})
+target_link_libraries (JailEngine PUBLIC OpenGL SDL2 GLEW::GLEW)
 
 

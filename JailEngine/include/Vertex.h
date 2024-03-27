@@ -1,6 +1,7 @@
 /* Vertex to pass to 
  */
-#pragma once
+#ifndef VERTEX_H
+#define VERTEX_H
 
 #include <GL/glew.h>
 
@@ -49,3 +50,4 @@ struct Vertex
 	}
 };
 
+#endif // VERTEX_H
