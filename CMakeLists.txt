@@ -27,9 +27,6 @@ if (EXISTS "${CMAKE_CURRENT_BINARY_DIR}/build/compile_commands.json")
     ${CMAKE_CURRENT_SOURCE_DIR}/build/compile_commands.json)
 endif ()
 
-include_directories (${OPENGL_INCLUDE_DIRS})
-include_directories (${GLEW_INCLUDE_DIRS})
-
 add_executable (jail ${HEADER_FILES} ${SRC_FILES} ${ENGINE_SRC_FILES})
 set_target_properties (JailEngine PROPERTIES LINKER_LANGUAGE CXX)
 target_include_directories(jail PUBLIC "${ENGINE_DIR}/include/" "${INCLUDE_DIR}")
