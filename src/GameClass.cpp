@@ -13,7 +13,6 @@ Game::Game () :
 	_sdlHeight (540), 
 	gameState (GameState::PLAY), 
 	shaderTime (0),
-	window (nullptr),
 	_maxFPS (60.0f)
 {
 }
@@ -49,36 +48,7 @@ void Game::init ()
 {
 	SDL_Init (SDL_INIT_EVERYTHING);
 	SDL_GL_SetAttribute (SDL_GL_DOUBLEBUFFER, 1);
-	window = SDL_CreateWindow (
-		"Jail Engine",
-		SDL_WINDOWPOS_CENTERED,
-		SDL_WINDOWPOS_CENTERED,
-		_sdlWidth,
-		_sdlHeight,
-		SDL_WINDOW_OPENGL );
-	
-	if (!window)
-	{
-		fatalError ("SDL Window could not be created.");
-	}
-
-	SDL_GLContext glContext = SDL_GL_CreateContext (window);
-	if (!glContext)
-	{
-		fatalError ("SDL_GL context could not be created!");
-	}
-
-	GLenum error = glewInit ();
-	if (error != GLEW_OK)
-	{
-		fatalError ("Could not initialize glew");
-	}
-
-	std::printf ("*** OpenGL Version: %s\n", glGetString (GL_VERSION));
-	glClearColor (0.0f,0.0f,0.0f,1.0f);
-
-	// V Sync 1, 0 off
-	SDL_GL_SetSwapInterval (1);
+	_window.create ("Jail Engine", _sdlWidth, _sdlHeight, 0);
 
 	initShaders ();
 }
@@ -125,7 +95,7 @@ void Game::drawGame ()
 	glEnd ();
 	**************************************************/
 
-	SDL_GL_SwapWindow (window);
+	_window.swapBuffer ();
 }
 
 void Game::processInput ()

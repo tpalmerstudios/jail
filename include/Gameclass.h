@@ -16,7 +16,8 @@
 #include <vector>
 
 #include <Sprite.h>
-#include "GLSLShader.h"
+#include <GLSLShader.h>
+#include <Window.h>
 
 enum class GameState {PLAY, PAUSE, EXIT};
 
@@ -42,7 +43,7 @@ class Game
 		void calculateFPS ();
 
 		// Variables
-		SDL_Window* window;
+		Window _window;
 		GameState gameState;
 		std::vector <Sprite*> _sprites;
 		GLSLShader shaderProgram;
