@@ -31,8 +31,7 @@ namespace Jail
 			GLuint _vertID;
 			GLuint _fragID;
 			// How many attributes are used by the shaders
-			int numAttribute;
-
+			int _numAttribute;
 
 			// Code for doing one shader. Called by compileShaders to do both
 			void compileShader (const std::string& filePath, GLuint id);

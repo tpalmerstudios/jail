@@ -5,52 +5,50 @@
 
 #include <GL/glew.h>
 
-namespace Jail
+namespace Jail {
+struct Position
 {
-	struct Position
-	{
-		float x;
-		float y;
-	};
+	float x;
+	float y;
+};
 
-	struct Color
-	{
-		GLubyte r;
-		GLubyte g;
-		GLubyte b;
-		GLubyte a;
-	};
-	struct UV
-	{
-		float u;
-		float v;
-	};
+struct Color
+{
+	GLubyte r;
+	GLubyte g;
+	GLubyte b;
+	GLubyte a;
+};
+struct UV
+{
+	float u;
+	float v;
+};
 
-	struct Vertex
+struct Vertex
+{
+	Position position;
+	Color color;
+	UV uv; // Usually between 0 and 1
+	void setPosition (float x, float y)
 	{
-		Position position;
-		Color color;
-		UV uv; // Usually between 0 and 1
-		void setPosition (float x, float y)
-		{
-			position.x = x;
-			position.y = y;
-		}
-	
-		void setColor (GLubyte r, GLubyte g, GLubyte b, GLubyte a)
-		{
-			color.r = r;
-			color.g = g;
-			color.b = b;
-			color.a = a;
-		}
+		position.x = x;
+		position.y = y;
+	}
 
-		void setUV (float u, float v)
-		{
-			uv.u = u;
-			uv.v = v;
-		}
-	};
-}
+	void setColor (GLubyte r, GLubyte g, GLubyte b, GLubyte a)
+	{
+		color.r = r;
+		color.g = g;
+		color.b = b;
+		color.a = a;
+	}
+
+	void setUV (float u, float v)
+	{
+		uv.u = u;
+		uv.v = v;
+	}
+};}
 
 #endif // VERTEX_H

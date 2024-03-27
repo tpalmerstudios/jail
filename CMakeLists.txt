@@ -1,9 +1,6 @@
 cmake_minimum_required (VERSION 3.21)
 project (jail LANGUAGES CXX)
 
-find_package (OpenGL REQUIRED)
-find_package (GLEW REQUIRED)
-
 add_compile_options("-Wextra" "-ggdb")
 
 set (SRC_DIR "${PROJECT_SOURCE_DIR}/src/")

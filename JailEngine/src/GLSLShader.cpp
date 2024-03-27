@@ -6,7 +6,7 @@
 #include "Errors.h"
 
 namespace Jail {
-GLSLShader::GLSLShader () : _programID (0), _vertID (0), _fragID (0), numAttribute (0)
+GLSLShader::GLSLShader () : _programID (0), _vertID (0), _fragID (0), _numAttribute (0)
 {
 }
 
@@ -15,7 +15,7 @@ GLSLShader::~GLSLShader ()
 }
 void GLSLShader::addAttribute (const std::string& attributeName)
 {
-	glBindAttribLocation (_programID, numAttribute++, attributeName.c_str());
+	glBindAttribLocation (_programID, _numAttribute++, attributeName.c_str());
 }
 
 GLint GLSLShader::getUniLoc (const std::string& uniformName)
@@ -31,7 +31,7 @@ GLint GLSLShader::getUniLoc (const std::string& uniformName)
 void GLSLShader::use ()
 {
 	glUseProgram (_programID);
-	for (int i = 0; i < numAttribute; i++)
+	for (int i = 0; i < _numAttribute; i++)
 	{
 		glEnableVertexAttribArray (i);
 	}
@@ -40,7 +40,7 @@ void GLSLShader::use ()
 void GLSLShader::unuse ()
 {
 	glUseProgram (0);
-	for (int i = 0; i < numAttribute; i++)
+	for (int i = 0; i < _numAttribute; i++)
 	{
 		glDisableVertexAttribArray (i);
 	}

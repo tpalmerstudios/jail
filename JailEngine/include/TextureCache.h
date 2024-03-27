@@ -5,15 +5,13 @@
 #include <string>
 #include "Texture.h"
 
-namespace Jail
+namespace Jail {
+class TextureCache
 {
-	class TextureCache
-	{
-		public:
-			GLTexture getTexture (std::string filePath);
-		private:
-			std::map<std::string, GLTexture> _textureMap;
-	};
-}
+	public:
+		GLTexture getTexture (std::string filePath);
+	private:
+		std::map<std::string, GLTexture> _textureMap;
+};}
 
 #endif

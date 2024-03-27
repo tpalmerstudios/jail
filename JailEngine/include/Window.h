@@ -6,25 +6,24 @@
 
 #include <string>
 
-namespace Jail
+namespace Jail {
+enum windowFlags {
+	NO_FLAGS = 0x0,
+	INVISIBLE = 0x1,
+	FULLSCREEN = 0x2,
+	BORDERLESS = 0x4
+};
+
+class Window
 {
-	enum windowFlags {
-		INVISIBLE = 0x1,
-		FULLSCREEN = 0x2,
-		BORDERLESS = 0x4
-	};
+	public:
+		int create (std::string windowName, unsigned int screenWidth, unsigned int screenHeight, unsigned int currentFlags);
+		void swapBuffer ();
 
-	class Window
-	{
-		public:
-			int create (std::string windowName, unsigned int screenWidth, unsigned int screenHeight, unsigned int currentFlags);
-			void swapBuffer ();
-
-			unsigned int getScreenWidth () {return _screenWidth;}
-			unsigned int getScreenHeight () {return _screenHeight;}
-		private:
-			SDL_Window* _sdlWindow;
-			unsigned int _screenWidth, _screenHeight;
-	};
-}
+		unsigned int getScreenWidth () {return _screenWidth;}
+		unsigned int getScreenHeight () {return _screenHeight;}
+	private:
+		SDL_Window* _sdlWindow;
+		unsigned int _screenWidth, _screenHeight;
+};}
 #endif // WINDOW_H
