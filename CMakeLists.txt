@@ -11,7 +11,7 @@ set (INCLUDE_DIR "${PROJECT_SOURCE_DIR}/include/")
 
 set (ENGINE_DIR "${PROJECT_SOURCE_DIR}/JailEngine/")
 
-set (CMAKE_RUNTIME_OUTPUT_DIRECTORY "${PROJECT_SOURCE_DIR}/build/")
+set (CMAKE_RUNTIME_OUTPUT_DIRECTORY "${PROJECT_SOURCE_DIR}/bin/")
 set (CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 file (GLOB HEADER_FILES "${INCLUDE_DIR}/*.h")
@@ -21,10 +21,10 @@ file (GLOB ENGINE_SRC_FILES "${ENGINE_DIR}/src/*.cpp")
 
 add_subdirectory (JailEngine)
 
-if (EXISTS "${CMAKE_CURRENT_BINARY_DIR}/build/compile_commands.json")
+if (EXISTS "${CMAKE_CURRENT_BINARY_DIR}/bin/compile_commands.json")
   EXECUTE_PROCESS (COMMAND ${CMAKE_COMMAND} -E copy_if_different
-    ${CMAKE_CURRENT_BINARY_DIR}/build/compile_commands.json
-    ${CMAKE_CURRENT_SOURCE_DIR}/build/compile_commands.json)
+    ${CMAKE_CURRENT_BINARY_DIR}/bin/compile_commands.json
+    ${CMAKE_CURRENT_SOURCE_DIR}/bin/compile_commands.json)
 endif ()
 
 add_executable (jail ${HEADER_FILES} ${SRC_FILES} ${ENGINE_SRC_FILES})

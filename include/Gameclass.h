@@ -15,8 +15,8 @@
 #include <GL/glew.h>
 #include <vector>
 
-#include "sprite.h"
-#include "texture.h"
+#include "Sprite.h"
+#include "Texture.h"
 #include "GLSLShader.h"
 
 enum class GameState {PLAY, PAUSE, EXIT};

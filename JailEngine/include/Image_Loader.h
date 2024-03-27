@@ -2,7 +2,7 @@
 #define IMAGE_LOADER_H
 
 #include <string>
-#include "texture.h"
+#include "Texture.h"
 
 class ImageLoader
 {

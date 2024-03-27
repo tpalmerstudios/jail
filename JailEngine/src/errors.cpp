@@ -3,7 +3,7 @@
  * TODO: Consider making this a class with a constructor and destructor
  * 
  */
-#include "errors.h"
+#include "Errors.h"
 
 #include <iostream>
 #include <cstdlib>

@@ -4,7 +4,7 @@
 #include <GL/glew.h>
 
 #include "Gameclass.h"
-#include "errors.h"
+#include <Errors.h>
 
 /* TODO: Move Game::init () into constructor.
  * Initialize screen and Game State*/
@@ -107,7 +107,7 @@ void Game::drawGame ()
 	GLuint timeLocation = shaderProgram.getUniLoc ("time");
 	glUniform1f (timeLocation, shaderTime);
 
-	for (int i = 0; i < _sprites.size (); i ++)
+	for (unsigned long i = 0; i < _sprites.size (); i ++)
 	{
 		_sprites [i]->draw ();
 	}
@@ -172,14 +172,15 @@ void Game::gameLoop ()
 
 void Game::calculateFPS ()
 {
-	static const int NUM_SAMPLES = 10;
+	static const unsigned char NUM_SAMPLES = 10;
+	static unsigned char currentFrame = 0;
 	static float frameTimes [NUM_SAMPLES];
-	static int currentFrame = 0;
-
 	static float prevTicks = SDL_GetTicks ();
-	float currentTicks;
+
 	float frameAverageTime = 0;
-	int count;
+	float currentTicks;
+	unsigned char count;
+
 	currentTicks = SDL_GetTicks ();
 	_frameTime = currentTicks - prevTicks;
 	prevTicks = currentTicks;
@@ -193,7 +194,7 @@ void Game::calculateFPS ()
 	{
 		count = NUM_SAMPLES;
 	}
-	for (int i = 0; i < count; i++)
+	for (unsigned char i = 0; i < count; i++)
 	{
 		frameAverageTime += frameTimes [i];
 	}

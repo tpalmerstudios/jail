@@ -3,7 +3,7 @@
 
 #include <map>
 #include <string>
-#include "texture.h"
+#include "Texture.h"
 
 class TextureCache
 {

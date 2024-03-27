@@ -3,7 +3,7 @@
 #include <string>
 
 #include "GLSLShader.h"
-#include "errors.h"
+#include "Errors.h"
 
 GLSLShader::GLSLShader () : _programID (0), _vertID (0), _fragID (0), numAttribute (0)
 {

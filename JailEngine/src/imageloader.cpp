@@ -1,8 +1,8 @@
 #include "Image_Loader.h"
 #include "PicoPNG.h"
-#include "texture.h"
+#include "Texture.h"
 #include "IO_Manager.h"
-#include "errors.h"
+#include "Errors.h"
 #include <vector>
 
 GLTexture ImageLoader::loadPNG (std::string sFilePath)

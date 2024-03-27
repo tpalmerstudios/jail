@@ -13,7 +13,7 @@
 #define SPRITE_H
 
 #include <GL/glew.h>
-#include "texture.h"
+#include "Texture.h"
 
 #include <string>
 
