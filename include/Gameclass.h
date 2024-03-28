@@ -15,6 +15,7 @@
 #include <GL/glew.h>
 #include <vector>
 
+#include <Camera2D.h>
 #include <Sprite.h>
 #include <GLSLShader.h>
 #include <Window.h>
@@ -47,6 +48,7 @@ class Game
 		GameState _gameState;
 		std::vector <Jail::Sprite*> _sprites;
 		Jail::GLSLShader _shaderProgram;
+		Jail::Camera2D _camera;
 
 		int _sdlWidth;
 		int _sdlHeight;
