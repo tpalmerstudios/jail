@@ -91,24 +91,13 @@ void Game::drawGame ()
 
 	glBindTexture (GL_TEXTURE_2D, 0);
 	_shaderProgram.unuse ();
-	/***************************************************
-	glEnableClientState (GL_COLOR_ARRAY);
-	glBegin (GL_TRIANGLES);
-	glColor3f (1.0f, 0.0f, 0.0f);
-
-	glVertex2f (0, 0);
-	glVertex2f (0, 1);
-	glVertex2f (-1, 1);
-	glEnd ();
-	**************************************************/
-
 	_window.swapBuffer ();
 }
 
 void Game::processInput ()
 {
 	SDL_Event action;
-	const float CAMERA_SPEED = 20.0f;
+	const float CAMERA_SPEED = 10.0f;
 	const float SCALE_SPEED = 0.1f;
 	while (SDL_PollEvent (&action))
 	{
@@ -119,7 +108,6 @@ void Game::processInput ()
 				break;
 
 			case SDL_MOUSEMOTION:
-				//std::cout << action.motion.x << " " << action.motion.y << std::endl;
 				break;
 			case SDL_KEYDOWN:
 				switch (action.key.keysym.sym)

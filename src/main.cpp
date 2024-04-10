@@ -5,10 +5,11 @@
 int main (int argc, char** argv)
 {
 	Game jail;
+	char wait;
+
 	jail.run ();
 
 	std::cout << "Enter a key to quit: ";
-	char wait;
 	std::cin >> wait;
 
 	return 0;
