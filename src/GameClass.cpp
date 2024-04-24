@@ -11,10 +11,12 @@
 /* TODO: Move Game::init () into constructor.
  * Initialize screen and Game State*/
 Game::Game () : 
+	_gameState (GameState::PLAY), 
 	_sdlWidth (980), 
 	_sdlHeight (540), 
-	_gameState (GameState::PLAY), 
-	shaderTime (0),
+	shaderTime (0.0f),
+	_fps (60.0f),
+	_frameTime (16.0f),
 	_maxFPS (60.0f)
 {
 	_camera.init (_sdlWidth, _sdlHeight);

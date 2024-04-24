@@ -10,6 +10,6 @@
 
 namespace Jail
 {
-	extern void fatalError (std::string errorString);
+	extern void fatalError (const std::string &error);
 }
 #endif // ERRORS_H

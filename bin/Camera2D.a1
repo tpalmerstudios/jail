@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<analyzerinfo hash="11801121639371527822">
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;glm/glm.hpp&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;glm/glm.hpp&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="/home/tpalmerstudios/projects/jail/JailEngine/include/Camera2D.h" line="4" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;glm/gtc/matrix_transform.hpp&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;glm/gtc/matrix_transform.hpp&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="/home/tpalmerstudios/projects/jail/JailEngine/include/Camera2D.h" line="5" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;glm/ext/matrix_transform.hpp&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;glm/ext/matrix_transform.hpp&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="/home/tpalmerstudios/projects/jail/JailEngine/src/Camera2D.cpp" line="2" column="0"/>
+        </error>
+  <FileInfo check="CheckUnusedFunctions">
+    <functiondecl functionName="update" lineNumber="16"/>
+    <functiondecl functionName="init" lineNumber="30"/>
+    <functioncall functionName="Camera2D"/>
+    <functioncall functionName="false"/>
+    <functioncall functionName="mat4"/>
+    <functioncall functionName="ortho"/>
+    <functioncall functionName="scale"/>
+    <functioncall functionName="translate"/>
+    <functioncall functionName="true"/>
+  </FileInfo>
+</analyzerinfo>

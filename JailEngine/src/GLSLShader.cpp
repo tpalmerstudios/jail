@@ -120,7 +120,7 @@ void GLSLShader::linkShaders ()
 
 	// Note the different functions here: glGetProgram* instead of glGetShader*.
 	GLint isLinked = 0;
-	glGetProgramiv(_programID, GL_LINK_STATUS, (int *)&isLinked);
+	glGetProgramiv(_programID, GL_LINK_STATUS, static_cast<int *>(&isLinked));
 	if (isLinked == GL_FALSE)
 	{
 		GLint maxLength = 0;

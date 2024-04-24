@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<analyzerinfo hash="12537464390230389832">
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;GL/glew.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;GL/glew.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="/home/tpalmerstudios/projects/jail/JailEngine/include/Sprite.h" line="15" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;GL/glew.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;GL/glew.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="/home/tpalmerstudios/projects/jail/JailEngine/include/Texture.h" line="4" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;string&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;string&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="/home/tpalmerstudios/projects/jail/JailEngine/include/Sprite.h" line="18" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;map&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;map&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="/home/tpalmerstudios/projects/jail/JailEngine/include/TextureCache.h" line="4" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;string&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;string&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="/home/tpalmerstudios/projects/jail/JailEngine/include/TextureCache.h" line="5" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;string&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;string&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="/home/tpalmerstudios/projects/jail/JailEngine/include/Resource.h" line="5" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;GL/glew.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;GL/glew.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="/home/tpalmerstudios/projects/jail/JailEngine/include/Vertex.h" line="6" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;cstddef&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;cstddef&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="/home/tpalmerstudios/projects/jail/JailEngine/src/Sprite.cpp" line="5" column="0"/>
+        </error>
+        <error id="uninitMemberVar" severity="warning" msg="Member variable &apos;Sprite::_texture&apos; is not initialized in the constructor." verbose="Member variable &apos;Sprite::_texture&apos; is not initialized in the constructor." cwe="398" file0="/home/tpalmerstudios/projects/jail/JailEngine/src/Sprite.cpp">
+            <location file="/home/tpalmerstudios/projects/jail/JailEngine/src/Sprite.cpp" line="8" column="9"/>
+            <symbol>Sprite::_texture</symbol>
+        </error>
+        <error id="cstyleCast" severity="style" msg="C-style pointer casting" verbose="C-style pointer casting detected. C++ offers four different kinds of casts as replacements: static_cast, const_cast, dynamic_cast and reinterpret_cast. A C-style cast could evaluate to any of those automatically, thus it is considered safer if the programmer explicitly states which kind of cast is expected." cwe="398" file0="/home/tpalmerstudios/projects/jail/JailEngine/src/Sprite.cpp">
+            <location file="/home/tpalmerstudios/projects/jail/JailEngine/src/Sprite.cpp" line="88" column="68"/>
+        </error>
+        <error id="cstyleCast" severity="style" msg="C-style pointer casting" verbose="C-style pointer casting detected. C++ offers four different kinds of casts as replacements: static_cast, const_cast, dynamic_cast and reinterpret_cast. A C-style cast could evaluate to any of those automatically, thus it is considered safer if the programmer explicitly states which kind of cast is expected." cwe="398" file0="/home/tpalmerstudios/projects/jail/JailEngine/src/Sprite.cpp">
+            <location file="/home/tpalmerstudios/projects/jail/JailEngine/src/Sprite.cpp" line="91" column="75"/>
+        </error>
+        <error id="cstyleCast" severity="style" msg="C-style pointer casting" verbose="C-style pointer casting detected. C++ offers four different kinds of casts as replacements: static_cast, const_cast, dynamic_cast and reinterpret_cast. A C-style cast could evaluate to any of those automatically, thus it is considered safer if the programmer explicitly states which kind of cast is expected." cwe="398" file0="/home/tpalmerstudios/projects/jail/JailEngine/src/Sprite.cpp">
+            <location file="/home/tpalmerstudios/projects/jail/JailEngine/src/Sprite.cpp" line="93" column="68"/>
+        </error>
+  <FileInfo check="CheckUnusedFunctions">
+    <functiondecl functionName="init" lineNumber="33"/>
+    <functiondecl functionName="draw" lineNumber="81"/>
+    <functioncall functionName="GLTexture"/>
+    <functioncall functionName="GL_ARRAY_BUFFER"/>
+    <functioncall functionName="GL_FLOAT"/>
+    <functioncall functionName="GL_STATIC_DRAW"/>
+    <functioncall functionName="GL_TEXTURE_2D"/>
+    <functioncall functionName="GL_TRIANGLES"/>
+    <functioncall functionName="GL_UNSIGNED_BYTE"/>
+    <functioncall functionName="Sprite"/>
+    <functioncall functionName="Vertex"/>
+    <functioncall functionName="color"/>
+    <functioncall functionName="getTexture"/>
+    <functioncall functionName="glBindBuffer"/>
+    <functioncall functionName="glBindTexture"/>
+    <functioncall functionName="glBufferData"/>
+    <functioncall functionName="glDeleteBuffers"/>
+    <functioncall functionName="glDisableVertexAttribArray"/>
+    <functioncall functionName="glDrawArrays"/>
+    <functioncall functionName="glEnableVertexAttribArray"/>
+    <functioncall functionName="glGenBuffers"/>
+    <functioncall functionName="glVertexAttribPointer"/>
+    <functioncall functionName="offsetof"/>
+    <functioncall functionName="position"/>
+    <functioncall functionName="setColor"/>
+    <functioncall functionName="setPosition"/>
+    <functioncall functionName="setUV"/>
+    <functioncall functionName="string"/>
+    <functioncall functionName="uv"/>
+  </FileInfo>
+</analyzerinfo>

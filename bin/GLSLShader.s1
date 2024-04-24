@@ -1,0 +1,9 @@
+GLSLShader
+GLSLShader
+addAttribute call:[c_str,glBindAttribLocation] noreturn:[glBindAttribLocation]
+getUniLoc call:[c_str,fatalError,glGetUniformLocation] noreturn:[fatalError]
+use call:[glEnableVertexAttribArray,glUseProgram] noreturn:[glEnableVertexAttribArray]
+unuse call:[glDisableVertexAttribArray,glUseProgram] noreturn:[glDisableVertexAttribArray]
+compileShaders call:[compileShader,fatalError,glCreateProgram,glCreateShader] noreturn:[compileShader,fatalError]
+compileShader call:[c_str,close,errorLog,fail,fatalError,getline,glCompileShader,glDeleteShader,glGetShaderInfoLog,glGetShaderiv,glShaderSource,printf,vertexStream] noreturn:[fatalError]
+linkShaders call:[errorLog,fatalError,glAttachShader,glDeleteProgram,glDeleteShader,glDetachShader,glGetProgramInfoLog,glGetProgramiv,glLinkProgram,printf] noreturn:[fatalError,glDeleteShader]

@@ -1,0 +1,109 @@
+<?xml version="1.0"?>
+<analyzerinfo hash="15970472226551894714">
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;iostream&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;iostream&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="/home/tpalmerstudios/projects/jail/src/GameClass.cpp" line="1" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;SDL2/SDL.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;SDL2/SDL.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="/home/tpalmerstudios/projects/jail/src/GameClass.cpp" line="3" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;GL/glew.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;GL/glew.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="/home/tpalmerstudios/projects/jail/src/GameClass.cpp" line="4" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;SDL2/SDL.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;SDL2/SDL.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="/home/tpalmerstudios/projects/jail/include/Gameclass.h" line="14" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;GL/glew.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;GL/glew.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="/home/tpalmerstudios/projects/jail/include/Gameclass.h" line="15" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;vector&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;vector&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="/home/tpalmerstudios/projects/jail/include/Gameclass.h" line="16" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;glm/glm.hpp&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;glm/glm.hpp&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="/home/tpalmerstudios/projects/jail/JailEngine/include/Camera2D.h" line="4" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;glm/gtc/matrix_transform.hpp&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;glm/gtc/matrix_transform.hpp&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="/home/tpalmerstudios/projects/jail/JailEngine/include/Camera2D.h" line="5" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;GL/glew.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;GL/glew.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="/home/tpalmerstudios/projects/jail/JailEngine/include/Sprite.h" line="15" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;GL/glew.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;GL/glew.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="/home/tpalmerstudios/projects/jail/JailEngine/include/Texture.h" line="4" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;string&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;string&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="/home/tpalmerstudios/projects/jail/JailEngine/include/Sprite.h" line="18" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;string&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;string&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="/home/tpalmerstudios/projects/jail/JailEngine/include/GLSLShader.h" line="4" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;GL/glew.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;GL/glew.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="/home/tpalmerstudios/projects/jail/JailEngine/include/GLSLShader.h" line="6" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;SDL2/SDL.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;SDL2/SDL.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="/home/tpalmerstudios/projects/jail/JailEngine/include/Window.h" line="4" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;GL/glew.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;GL/glew.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="/home/tpalmerstudios/projects/jail/JailEngine/include/Window.h" line="5" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;string&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;string&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="/home/tpalmerstudios/projects/jail/JailEngine/include/Window.h" line="7" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;string&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;string&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="/home/tpalmerstudios/projects/jail/JailEngine/include/Errors.h" line="9" column="0"/>
+        </error>
+  <FileInfo check="Class">
+<class name="Game" file="/home/tpalmerstudios/projects/jail/include/Gameclass.h" line="25" col="1" hash="10201705402635521009"/>
+  </FileInfo>
+  <FileInfo check="CheckUnusedFunctions">
+    <functiondecl functionName="run" lineNumber="31"/>
+    <functiondecl functionName="init" lineNumber="53"/>
+    <functiondecl functionName="initShaders" lineNumber="61"/>
+    <functiondecl functionName="drawGame" lineNumber="70"/>
+    <functiondecl functionName="processInput" lineNumber="99"/>
+    <functiondecl functionName="gameLoop" lineNumber="141"/>
+    <functiondecl functionName="calculateFPS" lineNumber="166"/>
+    <functioncall functionName="EXIT"/>
+    <functioncall functionName="GL_DEPTH_BUFFER_BIT"/>
+    <functioncall functionName="GL_TEXTURE0"/>
+    <functioncall functionName="GL_TEXTURE_2D"/>
+    <functioncall functionName="Game"/>
+    <functioncall functionName="PLAY"/>
+    <functioncall functionName="SDL_Delay"/>
+    <functioncall functionName="SDL_GetTicks"/>
+    <functioncall functionName="SDL_PollEvent"/>
+    <functioncall functionName="Sprite"/>
+    <functioncall functionName="addAttribute"/>
+    <functioncall functionName="back"/>
+    <functioncall functionName="calculateFPS"/>
+    <functioncall functionName="compileShaders"/>
+    <functioncall functionName="create"/>
+    <functioncall functionName="draw"/>
+    <functioncall functionName="drawGame"/>
+    <functioncall functionName="gameLoop"/>
+    <functioncall functionName="getCameraMatrix"/>
+    <functioncall functionName="getPosition"/>
+    <functioncall functionName="getScale"/>
+    <functioncall functionName="getUniLoc"/>
+    <functioncall functionName="glActiveTexture"/>
+    <functioncall functionName="glBindTexture"/>
+    <functioncall functionName="glClear"/>
+    <functioncall functionName="glClearDepth"/>
+    <functioncall functionName="glUniform1f"/>
+    <functioncall functionName="glUniform1i"/>
+    <functioncall functionName="glUniformMatrix4fv"/>
+    <functioncall functionName="init"/>
+    <functioncall functionName="initShaders"/>
+    <functioncall functionName="linkShaders"/>
+    <functioncall functionName="processInput"/>
+    <functioncall functionName="push_back"/>
+    <functioncall functionName="setPosition"/>
+    <functioncall functionName="setScale"/>
+    <functioncall functionName="size"/>
+    <functioncall functionName="swapBuffer"/>
+    <functioncall functionName="true"/>
+    <functioncall functionName="unuse"/>
+    <functioncall functionName="update"/>
+    <functioncall functionName="use"/>
+    <functioncall functionName="vec2"/>
+  </FileInfo>
+</analyzerinfo>

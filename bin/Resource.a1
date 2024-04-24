@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<analyzerinfo hash="5403924827235107392">
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;map&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;map&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="/home/tpalmerstudios/projects/jail/JailEngine/include/TextureCache.h" line="4" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;string&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;string&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="/home/tpalmerstudios/projects/jail/JailEngine/include/TextureCache.h" line="5" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;GL/glew.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;GL/glew.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="/home/tpalmerstudios/projects/jail/JailEngine/include/Texture.h" line="4" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;string&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;string&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="/home/tpalmerstudios/projects/jail/JailEngine/include/Resource.h" line="5" column="0"/>
+        </error>
+  <FileInfo check="Null pointer">
+    <unsafe-usage my-id="/home/tpalmerstudios/projects/jail/JailEngine/include/Resource.h:11:20" my-argnr="1" my-argname="filePath" file="/home/tpalmerstudios/projects/jail/JailEngine/src/Resource.cpp" line="10" col="35" value="0"/>
+  </FileInfo>
+  <FileInfo check="CheckUnusedFunctions">
+    <functiondecl functionName="getTexture" lineNumber="7"/>
+    <functioncall functionName="GLTexture"/>
+    <functioncall functionName="getTexture"/>
+    <functioncall functionName="string"/>
+  </FileInfo>
+</analyzerinfo>

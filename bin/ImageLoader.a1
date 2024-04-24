@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<analyzerinfo hash="5468692633822157500">
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;string&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;string&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="/home/tpalmerstudios/projects/jail/JailEngine/include/Image_Loader.h" line="4" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;GL/glew.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;GL/glew.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="/home/tpalmerstudios/projects/jail/JailEngine/include/Texture.h" line="4" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;vector&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;vector&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="/home/tpalmerstudios/projects/jail/JailEngine/include/PicoPNG.h" line="1" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;vector&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;vector&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="/home/tpalmerstudios/projects/jail/JailEngine/include/IO_Manager.h" line="4" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;string&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;string&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="/home/tpalmerstudios/projects/jail/JailEngine/include/IO_Manager.h" line="5" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;string&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;string&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="/home/tpalmerstudios/projects/jail/JailEngine/include/Errors.h" line="9" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;vector&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;vector&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="/home/tpalmerstudios/projects/jail/JailEngine/src/ImageLoader.cpp" line="6" column="0"/>
+        </error>
+  <FileInfo check="CheckUnusedFunctions">
+    <functiondecl functionName="loadPNG" lineNumber="9"/>
+    <functioncall functionName="GL_LINEAR"/>
+    <functioncall functionName="GL_LINEAR_MIPMAP_LINEAR"/>
+    <functioncall functionName="GL_REPEAT"/>
+    <functioncall functionName="GL_RGBA"/>
+    <functioncall functionName="GL_TEXTURE_2D"/>
+    <functioncall functionName="GL_TEXTURE_MAG_FILTER"/>
+    <functioncall functionName="GL_TEXTURE_MIN_FILTER"/>
+    <functioncall functionName="GL_TEXTURE_WRAP_S"/>
+    <functioncall functionName="GL_TEXTURE_WRAP_T"/>
+    <functioncall functionName="GL_UNSIGNED_BYTE"/>
+    <functioncall functionName="decodePNG"/>
+    <functioncall functionName="fatalError"/>
+    <functioncall functionName="glBindTexture"/>
+    <functioncall functionName="glGenTextures"/>
+    <functioncall functionName="glGenerateMipmap"/>
+    <functioncall functionName="glTexImage2D"/>
+    <functioncall functionName="glTexParameteri"/>
+    <functioncall functionName="isLoadFile"/>
+    <functioncall functionName="size"/>
+    <functioncall functionName="to_string"/>
+    <functioncall functionName="true"/>
+  </FileInfo>
+</analyzerinfo>

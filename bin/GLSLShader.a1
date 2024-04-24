@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<analyzerinfo hash="8649091487794826054">
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;fstream&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;fstream&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="/home/tpalmerstudios/projects/jail/JailEngine/src/GLSLShader.cpp" line="1" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;vector&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;vector&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="/home/tpalmerstudios/projects/jail/JailEngine/src/GLSLShader.cpp" line="2" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;string&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;string&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="/home/tpalmerstudios/projects/jail/JailEngine/src/GLSLShader.cpp" line="3" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;string&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;string&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="/home/tpalmerstudios/projects/jail/JailEngine/include/GLSLShader.h" line="4" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;GL/glew.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;GL/glew.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="/home/tpalmerstudios/projects/jail/JailEngine/include/GLSLShader.h" line="6" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;string&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;string&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="/home/tpalmerstudios/projects/jail/JailEngine/include/Errors.h" line="9" column="0"/>
+        </error>
+  <FileInfo check="Null pointer">
+    <unsafe-usage my-id="/home/tpalmerstudios/projects/jail/JailEngine/include/GLSLShader.h:19:9" my-argnr="1" my-argname="vertFile" file="/home/tpalmerstudios/projects/jail/JailEngine/src/GLSLShader.cpp" line="66" col="17" value="0"/>
+    <unsafe-usage my-id="/home/tpalmerstudios/projects/jail/JailEngine/include/GLSLShader.h:19:9" my-argnr="2" my-argname="fragFile" file="/home/tpalmerstudios/projects/jail/JailEngine/src/GLSLShader.cpp" line="67" col="17" value="0"/>
+  </FileInfo>
+  <FileInfo check="Uninitialized variables">
+    <unsafe-usage my-id="/home/tpalmerstudios/projects/jail/JailEngine/include/GLSLShader.h:21:9" my-argnr="1" my-argname="attributeName" file="/home/tpalmerstudios/projects/jail/JailEngine/src/GLSLShader.cpp" line="18" col="53" value="0"/>
+    <unsafe-usage my-id="/home/tpalmerstudios/projects/jail/JailEngine/include/GLSLShader.h:27:10" my-argnr="1" my-argname="uniformName" file="/home/tpalmerstudios/projects/jail/JailEngine/src/GLSLShader.cpp" line="23" col="53" value="0"/>
+  </FileInfo>
+  <FileInfo check="CheckUnusedFunctions">
+    <functiondecl functionName="addAttribute" lineNumber="16"/>
+    <functiondecl functionName="getUniLoc" lineNumber="21"/>
+    <functiondecl functionName="use" lineNumber="31"/>
+    <functiondecl functionName="unuse" lineNumber="40"/>
+    <functiondecl functionName="compileShaders" lineNumber="49"/>
+    <functiondecl functionName="compileShader" lineNumber="71"/>
+    <functiondecl functionName="linkShaders" lineNumber="112"/>
+    <functioncall functionName="GLSLShader"/>
+    <functioncall functionName="GL_COMPILE_STATUS"/>
+    <functioncall functionName="GL_FRAGMENT_SHADER"/>
+    <functioncall functionName="GL_INFO_LOG_LENGTH"/>
+    <functioncall functionName="GL_LINK_STATUS"/>
+    <functioncall functionName="GL_VERTEX_SHADER"/>
+    <functioncall functionName="c_str"/>
+    <functioncall functionName="close"/>
+    <functioncall functionName="compileShader"/>
+    <functioncall functionName="errorLog"/>
+    <functioncall functionName="fail"/>
+    <functioncall functionName="fatalError"/>
+    <functioncall functionName="getline"/>
+    <functioncall functionName="glAttachShader"/>
+    <functioncall functionName="glBindAttribLocation"/>
+    <functioncall functionName="glCompileShader"/>
+    <functioncall functionName="glCreateProgram"/>
+    <functioncall functionName="glCreateShader"/>
+    <functioncall functionName="glDeleteProgram"/>
+    <functioncall functionName="glDeleteShader"/>
+    <functioncall functionName="glDetachShader"/>
+    <functioncall functionName="glDisableVertexAttribArray"/>
+    <functioncall functionName="glEnableVertexAttribArray"/>
+    <functioncall functionName="glGetProgramInfoLog"/>
+    <functioncall functionName="glGetProgramiv"/>
+    <functioncall functionName="glGetShaderInfoLog"/>
+    <functioncall functionName="glGetShaderiv"/>
+    <functioncall functionName="glGetUniformLocation"/>
+    <functioncall functionName="glLinkProgram"/>
+    <functioncall functionName="glShaderSource"/>
+    <functioncall functionName="glUseProgram"/>
+    <functioncall functionName="printf"/>
+    <functioncall functionName="vertexStream"/>
+  </FileInfo>
+</analyzerinfo>

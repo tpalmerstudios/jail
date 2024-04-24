@@ -17,7 +17,8 @@ enum windowFlags {
 class Window
 {
 	public:
-		int create (std::string windowName, unsigned int screenWidth, unsigned int screenHeight, unsigned int currentFlags);
+		Window ();
+		int create (const std::string &windowName, unsigned int screenWidth, unsigned int screenHeight, unsigned int currentFlags);
 		void swapBuffer ();
 
 		unsigned int getScreenWidth () {return _screenWidth;}

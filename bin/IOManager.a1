@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<analyzerinfo hash="2298823612257541195">
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;fstream&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;fstream&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="/home/tpalmerstudios/projects/jail/JailEngine/src/IOManager.cpp" line="1" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;vector&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;vector&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="/home/tpalmerstudios/projects/jail/JailEngine/include/IO_Manager.h" line="4" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;string&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;string&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="/home/tpalmerstudios/projects/jail/JailEngine/include/IO_Manager.h" line="5" column="0"/>
+        </error>
+        <error id="cstyleCast" severity="style" msg="C-style pointer casting" verbose="C-style pointer casting detected. C++ offers four different kinds of casts as replacements: static_cast, const_cast, dynamic_cast and reinterpret_cast. A C-style cast could evaluate to any of those automatically, thus it is considered safer if the programmer explicitly states which kind of cast is expected." cwe="398" file0="/home/tpalmerstudios/projects/jail/JailEngine/src/IOManager.cpp">
+            <location file="/home/tpalmerstudios/projects/jail/JailEngine/src/IOManager.cpp" line="27" column="13"/>
+        </error>
+  <FileInfo check="CheckUnusedFunctions">
+    <functiondecl functionName="isLoadFile" lineNumber="5"/>
+    <functioncall functionName="beg"/>
+    <functioncall functionName="binary"/>
+    <functioncall functionName="c_str"/>
+    <functioncall functionName="close"/>
+    <functioncall functionName="end"/>
+    <functioncall functionName="fail"/>
+    <functioncall functionName="false"/>
+    <functioncall functionName="file"/>
+    <functioncall functionName="perror"/>
+    <functioncall functionName="read"/>
+    <functioncall functionName="resize"/>
+    <functioncall functionName="seekg"/>
+    <functioncall functionName="tellg"/>
+    <functioncall functionName="true"/>
+  </FileInfo>
+</analyzerinfo>

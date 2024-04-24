@@ -8,7 +8,7 @@ namespace Jail {
 class Resource
 {
 	public:
-		static GLTexture getTexture (std::string filePath);
+		static GLTexture getTexture (const std::string &filePath);
 		//static GLuint boundTexture;
 	private:
 		static TextureCache _textureCache;

@@ -2,12 +2,18 @@
 #include "Errors.h"
 
 namespace Jail {
+Window::Window () :
+	_screenWidth (980),
+	_screenHeight (540)
+{
+}
+
 void Window::swapBuffer ()
 {
 	SDL_GL_SwapWindow (_sdlWindow);
 }
 
-int Window::create (std::string windowName, unsigned int screenWidth, unsigned int screenHeight, unsigned int currentFlags)
+int Window::create (const std::string &windowName, unsigned int screenWidth, unsigned int screenHeight, unsigned int currentFlags)
 {
 	Uint32 flags = SDL_WINDOW_OPENGL;
 	if (currentFlags & INVISIBLE)

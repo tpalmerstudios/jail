@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<results version="2">
+    <cppcheck version="2.11"/>
+    <errors>
+        <error id="cstyleCast" severity="style" msg="C-style pointer casting" verbose="C-style pointer casting detected. C++ offers four different kinds of casts as replacements: static_cast, const_cast, dynamic_cast and reinterpret_cast. A C-style cast could evaluate to any of those automatically, thus it is considered safer if the programmer explicitly states which kind of cast is expected." cwe="398" file0="JailEngine/src/IOManager.cpp" sinceDate="M/d/yy">
+            <location file="JailEngine/src/IOManager.cpp" line="27"/>
+        </error>
+        <error id="uninitMemberVar" severity="warning" msg="Member variable &amp;#039;Sprite::_texture&amp;#039; is not initialized in the constructor." verbose="Member variable &amp;#039;Sprite::_texture&amp;#039; is not initialized in the constructor." cwe="398" file0="JailEngine/src/Sprite.cpp" sinceDate="M/d/yy">
+            <location file="JailEngine/src/Sprite.cpp" line="8"/>
+        </error>
+        <error id="cstyleCast" severity="style" msg="C-style pointer casting" verbose="C-style pointer casting detected. C++ offers four different kinds of casts as replacements: static_cast, const_cast, dynamic_cast and reinterpret_cast. A C-style cast could evaluate to any of those automatically, thus it is considered safer if the programmer explicitly states which kind of cast is expected." cwe="398" file0="JailEngine/src/Sprite.cpp" sinceDate="M/d/yy">
+            <location file="JailEngine/src/Sprite.cpp" line="88"/>
+        </error>
+        <error id="cstyleCast" severity="style" msg="C-style pointer casting" verbose="C-style pointer casting detected. C++ offers four different kinds of casts as replacements: static_cast, const_cast, dynamic_cast and reinterpret_cast. A C-style cast could evaluate to any of those automatically, thus it is considered safer if the programmer explicitly states which kind of cast is expected." cwe="398" file0="JailEngine/src/Sprite.cpp" sinceDate="M/d/yy">
+            <location file="JailEngine/src/Sprite.cpp" line="91"/>
+        </error>
+        <error id="cstyleCast" severity="style" msg="C-style pointer casting" verbose="C-style pointer casting detected. C++ offers four different kinds of casts as replacements: static_cast, const_cast, dynamic_cast and reinterpret_cast. A C-style cast could evaluate to any of those automatically, thus it is considered safer if the programmer explicitly states which kind of cast is expected." cwe="398" file0="JailEngine/src/Sprite.cpp" sinceDate="M/d/yy">
+            <location file="JailEngine/src/Sprite.cpp" line="93"/>
+        </error>
+        <error id="noConstructor" severity="style" msg="The class &amp;#039;SpriteBatch&amp;#039; does not declare a constructor although it has private member variables which likely require initialization." verbose="The class &amp;#039;SpriteBatch&amp;#039; does not declare a constructor although it has private member variables. Member variables of builtin types are left uninitialized when the class is instantiated. That may cause bugs or undefined behavior." cwe="398" file0="JailEngine/src/SpriteBatch.cpp" sinceDate="M/d/yy">
+            <location file="JailEngine/include/SpriteBatch.h" line="21"/>
+        </error>
+        <error id="uninitMemberVar" severity="warning" msg="Member variable &amp;#039;Window::_sdlWindow&amp;#039; is not initialized in the constructor." verbose="Member variable &amp;#039;Window::_sdlWindow&amp;#039; is not initialized in the constructor." cwe="398" file0="JailEngine/src/Window.cpp" sinceDate="M/d/yy">
+            <location file="JailEngine/src/Window.cpp" line="5"/>
+        </error>
+        <error id="constVariable" severity="style" msg="Variable &amp;#039;passh&amp;#039; can be declared as const array" verbose="Variable &amp;#039;passh&amp;#039; can be declared as const array" cwe="398" file0="JailEngine/src/PicoPNG.cpp" sinceDate="M/d/yy">
+            <location file="JailEngine/src/PicoPNG.cpp" line="352"/>
+        </error>
+        <error id="constVariable" severity="style" msg="Variable &amp;#039;pattern&amp;#039; can be declared as const array" verbose="Variable &amp;#039;pattern&amp;#039; can be declared as const array" cwe="398" file0="JailEngine/src/PicoPNG.cpp" sinceDate="M/d/yy">
+            <location file="JailEngine/src/PicoPNG.cpp" line="354"/>
+        </error>
+        <error id="constVariablePointer" severity="style" msg="Variable &amp;#039;prevline&amp;#039; can be declared as pointer to const" verbose="Variable &amp;#039;prevline&amp;#039; can be declared as pointer to const" cwe="398" file0="JailEngine/src/PicoPNG.cpp" sinceDate="M/d/yy">
+            <location file="JailEngine/src/PicoPNG.cpp" line="424"/>
+        </error>
+    </errors>
+</results>

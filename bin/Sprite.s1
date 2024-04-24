@@ -1,0 +1,7 @@
+setPosition
+setColor
+setUV
+Sprite
+Sprite call:[glDeleteBuffers] noreturn:[glDeleteBuffers]
+init call:[getTexture,glBindBuffer,glBufferData,glGenBuffers,setColor,setPosition,setUV,sizeof] noreturn:[glBindBuffer,glGenBuffers,setColor]
+draw call:[glBindBuffer,glBindTexture,glDisableVertexAttribArray,glDrawArrays,glEnableVertexAttribArray,glVertexAttribPointer,offsetof,sizeof] noreturn:[glBindBuffer]

@@ -1,0 +1,8 @@
+setPosition
+setScale
+getPosition
+getCameraMatrix
+getScale
+Camera2D
+update call:[mat4,scale,translate]
+init call:[ortho] noreturn:[ortho]

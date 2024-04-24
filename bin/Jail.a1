@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<analyzerinfo hash="6615199829413307123">
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;SDL2/SDL.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;SDL2/SDL.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="/home/tpalmerstudios/projects/jail/JailEngine/src/Jail.cpp" line="1" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;GL/glew.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;GL/glew.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="/home/tpalmerstudios/projects/jail/JailEngine/src/Jail.cpp" line="2" column="0"/>
+        </error>
+  <FileInfo check="CheckUnusedFunctions">
+    <functioncall functionName="SDL_GL_DOUBLEBUFFER"/>
+    <functioncall functionName="SDL_GL_SetAttribute"/>
+    <functioncall functionName="SDL_INIT_EVERYTHING"/>
+    <functioncall functionName="SDL_Init"/>
+  </FileInfo>
+</analyzerinfo>

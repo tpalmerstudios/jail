@@ -1,0 +1,1 @@
+loadPNG call:[decodePNG,fatalError,glBindTexture,glGenTextures,glGenerateMipmap,glTexImage2D,glTexParameteri,isLoadFile,size,to_string] noreturn:[fatalError]

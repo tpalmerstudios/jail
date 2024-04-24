@@ -14,7 +14,7 @@
  * SDL systems quit.
  * System quit.*/
 namespace Jail {
-void fatalError (std::string error)
+void fatalError (const std::string &error)
 {
 	// This allows pause to see final frame before exit
 	char input;

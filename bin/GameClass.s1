@@ -1,0 +1,16 @@
+setPosition
+setScale
+getPosition
+getCameraMatrix
+getScale
+getScreenWidth
+getScreenHeight
+Game call:[init] noreturn:[init]
+Game
+run call:[Sprite,back,gameLoop,init,push_back] noreturn:[gameLoop]
+init call:[create,init,initShaders] noreturn:[initShaders]
+initShaders call:[addAttribute,compileShaders,linkShaders] noreturn:[linkShaders]
+drawGame call:[draw,getCameraMatrix,getUniLoc,glActiveTexture,glBindTexture,glClear,glClearDepth,glUniform1f,glUniform1i,glUniformMatrix4fv,size,swapBuffer,unuse,use] noreturn:[draw,swapBuffer]
+processInput call:[SDL_PollEvent,getPosition,getScale,setPosition,setScale,vec2]
+gameLoop call:[SDL_Delay,SDL_GetTicks,calculateFPS,drawGame,processInput,update] noreturn:[SDL_Delay]
+calculateFPS call:[SDL_GetTicks]

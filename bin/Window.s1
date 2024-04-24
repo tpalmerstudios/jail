@@ -1,0 +1,5 @@
+getScreenWidth
+getScreenHeight
+Window
+swapBuffer call:[SDL_GL_SwapWindow] noreturn:[SDL_GL_SwapWindow]
+create call:[SDL_CreateWindow,SDL_GL_CreateContext,SDL_GL_SetSwapInterval,c_str,fatalError,glClearColor,glGetString,glewInit,printf] noreturn:[fatalError]

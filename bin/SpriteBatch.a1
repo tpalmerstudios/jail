@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<analyzerinfo hash="6350836698598369337">
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;GL/glew.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;GL/glew.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="/home/tpalmerstudios/projects/jail/JailEngine/include/SpriteBatch.h" line="4" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;glm/glm.hpp&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;glm/glm.hpp&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="/home/tpalmerstudios/projects/jail/JailEngine/include/SpriteBatch.h" line="5" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;GL/glew.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;GL/glew.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="/home/tpalmerstudios/projects/jail/JailEngine/include/Vertex.h" line="6" column="0"/>
+        </error>
+        <error id="noConstructor" severity="style" msg="The class &apos;SpriteBatch&apos; does not declare a constructor although it has private member variables which likely require initialization." verbose="The class &apos;SpriteBatch&apos; does not declare a constructor although it has private member variables. Member variables of builtin types are left uninitialized when the class is instantiated. That may cause bugs or undefined behavior." cwe="398" file0="/home/tpalmerstudios/projects/jail/JailEngine/src/SpriteBatch.cpp">
+            <location file="/home/tpalmerstudios/projects/jail/JailEngine/include/SpriteBatch.h" line="21" column="2"/>
+            <symbol>SpriteBatch</symbol>
+        </error>
+</analyzerinfo>

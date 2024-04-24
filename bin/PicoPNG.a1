@@ -1,0 +1,150 @@
+<?xml version="1.0"?>
+<analyzerinfo hash="9908442512538287267">
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;vector&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;vector&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="/home/tpalmerstudios/projects/jail/JailEngine/include/PicoPNG.h" line="1" column="0"/>
+        </error>
+        <error id="checkLevelNormal" severity="information" msg="ValueFlow analysis is limited in decodePNG. Use --check-level=exhaustive if full analysis is wanted." verbose="ValueFlow analysis is limited in decodePNG. Use --check-level=exhaustive if full analysis is wanted." file0="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp">
+            <location file="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp" line="25" column="1"/>
+        </error>
+        <error id="constVariable" severity="style" msg="Variable &apos;passh&apos; can be declared as const array" verbose="Variable &apos;passh&apos; can be declared as const array" cwe="398" file0="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp">
+            <location file="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp" line="352" column="16" info="Variable &apos;passh&apos; can be declared as const array"/>
+            <symbol>passh</symbol>
+        </error>
+        <error id="constVariable" severity="style" msg="Variable &apos;pattern&apos; can be declared as const array" verbose="Variable &apos;pattern&apos; can be declared as const array" cwe="398" file0="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp">
+            <location file="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp" line="354" column="16" info="Variable &apos;pattern&apos; can be declared as const array"/>
+            <symbol>pattern</symbol>
+        </error>
+        <error id="constVariablePointer" severity="style" msg="Variable &apos;prevline&apos; can be declared as pointer to const" verbose="Variable &apos;prevline&apos; can be declared as pointer to const" cwe="398" file0="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp">
+            <location file="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp" line="424" column="57" info="Variable &apos;prevline&apos; can be declared as pointer to const"/>
+            <symbol>prevline</symbol>
+        </error>
+  <FileInfo check="ctu">
+<function-call call-id="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp:59:26" call-funcname="readBitFromStream" call-argnr="1" file="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp" line="112" col="37" call-argexpr="bp" call-argvaluetype="0" call-argvalue="0">
+  <path file="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp" line="106" col="21" info="Assignment &apos;bp=0&apos;, assigned value is 0"/>
+  <path file="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp" line="111" col="22" info="Assuming condition is false"/>
+</function-call><function-call call-id="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp:378:10" call-funcname="unFilterScanline" call-argnr="3" file="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp" line="333" col="27" call-argexpr="prevline" call-argvaluetype="0" call-argvalue="0">
+  <path file="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp" line="332" col="52" info="Assignment &apos;prevline=(y==0)?0:&amp;out_[(y-1)*info.width*bytewidth]&apos;, assigned value is 0"/>
+</function-call><function-call call-id="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp:378:10" call-funcname="unFilterScanline" call-argnr="3" file="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp" line="343" col="29" call-argexpr="prevline" call-argvaluetype="0" call-argvalue="0">
+  <path file="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp" line="342" col="54" info="Assignment &apos;prevline=(y==0)?0:&amp;out_[(y-1)*info.width*bytewidth]&apos;, assigned value is 0"/>
+</function-call><function-call call-id="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp:523:19" call-funcname="paethPredictor" call-argnr="1" file="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp" line="406" col="98" call-argexpr="0" call-argvaluetype="0" call-argvalue="0"/><function-call call-id="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp:523:19" call-funcname="paethPredictor" call-argnr="3" file="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp" line="406" col="98" call-argexpr="0" call-argvaluetype="0" call-argvalue="0"/><function-call call-id="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp:523:19" call-funcname="paethPredictor" call-argnr="2" file="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp" line="412" col="98" call-argexpr="0" call-argvaluetype="0" call-argvalue="0"/><function-call call-id="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp:523:19" call-funcname="paethPredictor" call-argnr="3" file="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp" line="412" col="98" call-argexpr="0" call-argvaluetype="0" call-argvalue="0"/><function-call call-id="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp:378:10" call-funcname="unFilterScanline" call-argnr="3" file="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp" line="425" col="25" call-argexpr="prevline" call-argvaluetype="0" call-argvalue="0">
+  <path file="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp" line="422" col="29" info="Assignment &apos;y=0&apos;, assigned value is 0"/>
+  <path file="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp" line="424" col="66" info="prevline is assigned &apos;(y==0)?0:lineo&apos; here."/>
+</function-call><function-call call-id="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp:437:26" call-funcname="readBitsFromReversedStream" call-argnr="1" file="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp" line="510" col="58" call-argexpr="bp" call-argvaluetype="0" call-argvalue="0">
+  <path file="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp" line="460" col="38" info="Assignment &apos;bp=0&apos;, assigned value is 0"/>
+</function-call><function-call call-id="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp:437:26" call-funcname="readBitsFromReversedStream" call-argnr="1" file="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp" line="517" col="57" call-argexpr="bp" call-argvaluetype="0" call-argvalue="0">
+  <path file="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp" line="460" col="38" info="Assignment &apos;bp=0&apos;, assigned value is 0"/>
+</function-call><function-call call-id="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp:59:26" call-funcname="readBitFromStream" call-argnr="1" file="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp" line="112" col="37" call-argexpr="bp" call-argvaluetype="0" call-argvalue="0">
+  <path file="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp" line="106" col="21" info="Assignment &apos;bp=0&apos;, assigned value is 0"/>
+  <path file="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp" line="111" col="22" info="Assuming condition is false"/>
+</function-call><function-call call-id="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp:378:10" call-funcname="unFilterScanline" call-argnr="3" file="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp" line="333" col="27" call-argexpr="prevline" call-argvaluetype="0" call-argvalue="0">
+  <path file="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp" line="332" col="52" info="Assignment &apos;prevline=(y==0)?0:&amp;out_[(y-1)*info.width*bytewidth]&apos;, assigned value is 0"/>
+</function-call><function-call call-id="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp:378:10" call-funcname="unFilterScanline" call-argnr="3" file="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp" line="343" col="29" call-argexpr="prevline" call-argvaluetype="0" call-argvalue="0">
+  <path file="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp" line="342" col="54" info="Assignment &apos;prevline=(y==0)?0:&amp;out_[(y-1)*info.width*bytewidth]&apos;, assigned value is 0"/>
+</function-call><function-call call-id="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp:523:19" call-funcname="paethPredictor" call-argnr="1" file="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp" line="406" col="98" call-argexpr="0" call-argvaluetype="0" call-argvalue="0"/><function-call call-id="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp:523:19" call-funcname="paethPredictor" call-argnr="3" file="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp" line="406" col="98" call-argexpr="0" call-argvaluetype="0" call-argvalue="0"/><function-call call-id="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp:523:19" call-funcname="paethPredictor" call-argnr="2" file="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp" line="412" col="98" call-argexpr="0" call-argvaluetype="0" call-argvalue="0"/><function-call call-id="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp:523:19" call-funcname="paethPredictor" call-argnr="3" file="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp" line="412" col="98" call-argexpr="0" call-argvaluetype="0" call-argvalue="0"/><function-call call-id="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp:378:10" call-funcname="unFilterScanline" call-argnr="3" file="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp" line="425" col="25" call-argexpr="prevline" call-argvaluetype="0" call-argvalue="0">
+  <path file="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp" line="422" col="29" info="Assignment &apos;y=0&apos;, assigned value is 0"/>
+  <path file="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp" line="424" col="66" info="prevline is assigned &apos;(y==0)?0:lineo&apos; here."/>
+</function-call><function-call call-id="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp:437:26" call-funcname="readBitsFromReversedStream" call-argnr="1" file="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp" line="510" col="58" call-argexpr="bp" call-argvaluetype="0" call-argvalue="0">
+  <path file="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp" line="460" col="38" info="Assignment &apos;bp=0&apos;, assigned value is 0"/>
+</function-call><function-call call-id="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp:437:26" call-funcname="readBitsFromReversedStream" call-argnr="1" file="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp" line="517" col="57" call-argexpr="bp" call-argvaluetype="0" call-argvalue="0">
+  <path file="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp" line="460" col="38" info="Assignment &apos;bp=0&apos;, assigned value is 0"/>
+</function-call><function-call call-id="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp:59:26" call-funcname="readBitFromStream" call-argnr="2" file="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp" line="63" col="52" my-id="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp:60:26" my-argnr="2"/>
+<function-call call-id="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp:59:26" call-funcname="readBitFromStream" call-argnr="2" file="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp" line="135" col="57" my-id="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp:129:21" my-argnr="1"/>
+<function-call call-id="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp:60:26" call-funcname="readBitsFromStream" call-argnr="2" file="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp" line="143" col="24" my-id="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp:139:12" my-argnr="3"/>
+<function-call call-id="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp:139:12" call-funcname="getTreeInflateDynamic" call-argnr="3" file="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp" line="196" col="31" my-id="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp:193:12" my-argnr="2"/>
+<function-call call-id="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp:378:10" call-funcname="unFilterScanline" call-argnr="1" file="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp" line="425" col="9" my-id="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp:418:10" my-argnr="2"/>
+<function-call call-id="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp:436:26" call-funcname="readBitFromReversedStream" call-argnr="2" file="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp" line="440" col="61" my-id="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp:437:26" my-argnr="2"/>
+  </FileInfo>
+  <FileInfo check="Bounds checking">
+    <array-index>
+    <unsafe-usage my-id="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp:444:19" my-argnr="1" my-argname="buffer" file="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp" line="444" col="71" value="0"/>
+    </array-index>
+  </FileInfo>
+  <FileInfo check="Null pointer">
+    <unsafe-usage my-id="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp:59:26" my-argnr="2" my-argname="bits" file="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp" line="59" col="111" value="0"/>
+    <unsafe-usage my-id="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp:436:26" my-argnr="2" my-argname="bits" file="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp" line="436" col="119" value="0"/>
+    <unsafe-usage my-id="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp:443:10" my-argnr="2" my-argname="bits" file="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp" line="443" col="89" value="0"/>
+    <unsafe-usage my-id="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp:444:19" my-argnr="1" my-argname="buffer" file="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp" line="444" col="71" value="0"/>
+  </FileInfo>
+  <FileInfo check="Uninitialized variables">
+    <unsafe-usage my-id="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp:59:26" my-argnr="1" my-argname="bitp" file="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp" line="59" col="116" value="0"/>
+    <unsafe-usage my-id="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp:59:26" my-argnr="2" my-argname="bits" file="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp" line="59" col="111" value="0"/>
+    <unsafe-usage my-id="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp:68:11" my-argnr="1" my-argname="bitlen" file="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp" line="70" col="50" value="0"/>
+    <unsafe-usage my-id="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp:120:12" my-argnr="1" my-argname="tree" file="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp" line="125" col="9" value="0"/>
+    <unsafe-usage my-id="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp:120:12" my-argnr="2" my-argname="treeD" file="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp" line="126" col="9" value="0"/>
+    <unsafe-usage my-id="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp:139:12" my-argnr="4" my-argname="bp" file="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp" line="142" col="12" value="0"/>
+    <unsafe-usage my-id="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp:235:9" my-argnr="2" my-argname="in" file="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp" line="238" col="10" value="0"/>
+    <unsafe-usage my-id="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp:436:26" my-argnr="1" my-argname="bitp" file="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp" line="436" col="124" value="0"/>
+    <unsafe-usage my-id="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp:436:26" my-argnr="2" my-argname="bits" file="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp" line="436" col="119" value="0"/>
+    <unsafe-usage my-id="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp:443:10" my-argnr="1" my-argname="bitp" file="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp" line="443" col="94" value="0"/>
+    <unsafe-usage my-id="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp:443:10" my-argnr="2" my-argname="bits" file="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp" line="443" col="89" value="0"/>
+    <unsafe-usage my-id="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp:444:19" my-argnr="1" my-argname="buffer" file="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp" line="444" col="71" value="0"/>
+    <unsafe-usage my-id="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp:452:19" my-argnr="1" my-argname="info" file="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp" line="454" col="10" value="0"/>
+    <unsafe-usage my-id="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp:458:9" my-argnr="1" my-argname="out" file="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp" line="461" col="7" value="0"/>
+    <unsafe-usage my-id="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp:458:9" my-argnr="3" my-argname="infoIn" file="/home/tpalmerstudios/projects/jail/JailEngine/src/PicoPNG.cpp" line="463" col="10" value="0"/>
+  </FileInfo>
+  <FileInfo check="CheckUnusedFunctions">
+    <functiondecl functionName="readBitFromStream" lineNumber="59"/>
+    <functiondecl functionName="readBitsFromStream" lineNumber="60"/>
+    <functiondecl functionName="makeFromLengths" lineNumber="68"/>
+    <functiondecl functionName="decode" lineNumber="90"/>
+    <functiondecl functionName="inflate" lineNumber="104"/>
+    <functiondecl functionName="generateFixedTrees" lineNumber="120"/>
+    <functiondecl functionName="huffmanDecodeSymbol" lineNumber="129"/>
+    <functiondecl functionName="getTreeInflateDynamic" lineNumber="139"/>
+    <functiondecl functionName="inflateHuffmanBlock" lineNumber="193"/>
+    <functiondecl functionName="inflateNoCompression" lineNumber="222"/>
+    <functiondecl functionName="decompress" lineNumber="235"/>
+    <functiondecl functionName="decode" lineNumber="256"/>
+    <functiondecl functionName="readPngHeader" lineNumber="366"/>
+    <functiondecl functionName="unFilterScanline" lineNumber="378"/>
+    <functiondecl functionName="adam7Pass" lineNumber="418"/>
+    <functiondecl functionName="readBitFromReversedStream" lineNumber="436"/>
+    <functiondecl functionName="readBitsFromReversedStream" lineNumber="437"/>
+    <functiondecl functionName="setBitOfReversedStream" lineNumber="443"/>
+    <functiondecl functionName="read32bitInt" lineNumber="444"/>
+    <functiondecl functionName="checkColorValidity" lineNumber="445"/>
+    <functiondecl functionName="getBpp" lineNumber="452"/>
+    <functiondecl functionName="convert" lineNumber="458"/>
+    <functiondecl functionName="paethPredictor" lineNumber="523"/>
+    <functioncall functionName="adam7Pass"/>
+    <functioncall functionName="bitlen"/>
+    <functioncall functionName="bitlenD"/>
+    <functioncall functionName="blcount"/>
+    <functioncall functionName="checkColorValidity"/>
+    <functioncall functionName="clear"/>
+    <functioncall functionName="codelengthcode"/>
+    <functioncall functionName="convert"/>
+    <functioncall functionName="decode"/>
+    <functioncall functionName="decompress"/>
+    <functioncall functionName="empty"/>
+    <functioncall functionName="end"/>
+    <functioncall functionName="false"/>
+    <functioncall functionName="generateFixedTrees"/>
+    <functioncall functionName="getBpp"/>
+    <functioncall functionName="getTreeInflateDynamic"/>
+    <functioncall functionName="huffmanDecodeSymbol"/>
+    <functioncall functionName="inflate"/>
+    <functioncall functionName="inflateHuffmanBlock"/>
+    <functioncall functionName="inflateNoCompression"/>
+    <functioncall functionName="insert"/>
+    <functioncall functionName="makeFromLengths"/>
+    <functioncall functionName="nextcode"/>
+    <functioncall functionName="paethPredictor"/>
+    <functioncall functionName="read32bitInt"/>
+    <functioncall functionName="readBitFromReversedStream"/>
+    <functioncall functionName="readBitFromStream"/>
+    <functioncall functionName="readBitsFromReversedStream"/>
+    <functioncall functionName="readBitsFromStream"/>
+    <functioncall functionName="readPngHeader"/>
+    <functioncall functionName="resize"/>
+    <functioncall functionName="scanlinen"/>
+    <functioncall functionName="scanlineo"/>
+    <functioncall functionName="scanlines"/>
+    <functioncall functionName="setBitOfReversedStream"/>
+    <functioncall functionName="size"/>
+    <functioncall functionName="templine"/>
+    <functioncall functionName="tree1d"/>
+    <functioncall functionName="true"/>
+    <functioncall functionName="unFilterScanline"/>
+  </FileInfo>
+</analyzerinfo>

@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<analyzerinfo hash="11148409242202445087">
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;SDL2/SDL.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;SDL2/SDL.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="/home/tpalmerstudios/projects/jail/JailEngine/include/Window.h" line="4" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;GL/glew.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;GL/glew.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="/home/tpalmerstudios/projects/jail/JailEngine/include/Window.h" line="5" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;string&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;string&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="/home/tpalmerstudios/projects/jail/JailEngine/include/Window.h" line="7" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;string&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;string&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="/home/tpalmerstudios/projects/jail/JailEngine/include/Errors.h" line="9" column="0"/>
+        </error>
+        <error id="uninitMemberVar" severity="warning" msg="Member variable &apos;Window::_sdlWindow&apos; is not initialized in the constructor." verbose="Member variable &apos;Window::_sdlWindow&apos; is not initialized in the constructor." cwe="398" file0="/home/tpalmerstudios/projects/jail/JailEngine/src/Window.cpp">
+            <location file="/home/tpalmerstudios/projects/jail/JailEngine/src/Window.cpp" line="5" column="9"/>
+            <symbol>Window::_sdlWindow</symbol>
+        </error>
+  <FileInfo check="Uninitialized variables">
+    <unsafe-usage my-id="/home/tpalmerstudios/projects/jail/JailEngine/include/Window.h:21:7" my-argnr="1" my-argname="windowName" file="/home/tpalmerstudios/projects/jail/JailEngine/src/Window.cpp" line="32" col="3" value="0"/>
+  </FileInfo>
+  <FileInfo check="CheckUnusedFunctions">
+    <functiondecl functionName="swapBuffer" lineNumber="11"/>
+    <functiondecl functionName="create" lineNumber="16"/>
+    <functioncall functionName="GL_VERSION"/>
+    <functioncall functionName="SDL_CreateWindow"/>
+    <functioncall functionName="SDL_GL_CreateContext"/>
+    <functioncall functionName="SDL_GL_SetSwapInterval"/>
+    <functioncall functionName="SDL_GL_SwapWindow"/>
+    <functioncall functionName="SDL_WINDOWPOS_CENTERED"/>
+    <functioncall functionName="SDL_WINDOW_OPENGL"/>
+    <functioncall functionName="Window"/>
+    <functioncall functionName="c_str"/>
+    <functioncall functionName="fatalError"/>
+    <functioncall functionName="glClearColor"/>
+    <functioncall functionName="glGetString"/>
+    <functioncall functionName="glewInit"/>
+    <functioncall functionName="printf"/>
+  </FileInfo>
+</analyzerinfo>

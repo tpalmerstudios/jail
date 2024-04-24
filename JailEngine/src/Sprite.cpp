@@ -5,9 +5,13 @@
 #include <cstddef>
 
 namespace Jail {
-Sprite::Sprite ()
+Sprite::Sprite () :
+	_vboID (0),
+	_x (0),
+	_y (0),
+	_width (0),
+	_height (0)
 {
-	_vboID = 0;
 }
 /* Alternat Sprite ()
  * Sprite::Sprite (float x, float y, float width, float width) : _vboID (0)

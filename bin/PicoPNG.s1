@@ -1,0 +1,24 @@
+decodePNG call:[adam7Pass,bitlen,bitlenD,blcount,checkColorValidity,clear,codelengthcode,convert,decode,decompress,empty,end,generateFixedTrees,getBpp,getTreeInflateDynamic,huffmanDecodeSymbol,inflate,inflateHuffmanBlock,inflateNoCompression,insert,makeFromLengths,nextcode,paethPredictor,read32bitInt,readBitFromReversedStream,readBitFromStream,readBitsFromReversedStream,readBitsFromStream,readPngHeader,resize,return,scanlinen,scanlineo,scanlines,setBitOfReversedStream,size,templine,tree1d,unFilterScanline] noreturn:[adam7Pass,checkColorValidity,convert,generateFixedTrees,inflateHuffmanBlock,inflateNoCompression,makeFromLengths,paethPredictor,resize,return,setBitOfReversedStream]
+readBitFromStream
+readBitsFromStream call:[readBitFromStream]
+makeFromLengths call:[blcount,clear,nextcode,resize,size,tree1d]
+decode call:[size]
+inflate call:[inflateHuffmanBlock,inflateNoCompression,readBitFromStream,resize,size] noreturn:[inflateHuffmanBlock,inflateNoCompression,resize]
+generateFixedTrees call:[bitlen,bitlenD,makeFromLengths] noreturn:[makeFromLengths]
+huffmanDecodeSymbol call:[decode,readBitFromStream]
+getTreeInflateDynamic call:[bitlen,bitlenD,codelengthcode,huffmanDecodeSymbol,makeFromLengths,readBitsFromStream]
+inflateHuffmanBlock call:[generateFixedTrees,getTreeInflateDynamic,huffmanDecodeSymbol,readBitsFromStream,resize,size] noreturn:[generateFixedTrees,resize]
+inflateNoCompression call:[resize,size] noreturn:[resize]
+decompress call:[inflate,size]
+decode call:[adam7Pass,convert,decompress,end,getBpp,insert,read32bitInt,readBitFromReversedStream,readPngHeader,resize,scanlinen,scanlineo,scanlines,setBitOfReversedStream,size,templine,unFilterScanline] noreturn:[adam7Pass,convert,setBitOfReversedStream]
+readPngHeader call:[checkColorValidity,read32bitInt] noreturn:[checkColorValidity]
+unFilterScanline call:[paethPredictor] noreturn:[paethPredictor]
+adam7Pass call:[readBitFromReversedStream,setBitOfReversedStream,unFilterScanline] noreturn:[setBitOfReversedStream]
+readBitFromReversedStream
+readBitsFromReversedStream call:[readBitFromReversedStream]
+setBitOfReversedStream
+read32bitInt call:[return]
+checkColorValidity
+getBpp call:[return] noreturn:[return]
+convert call:[empty,readBitsFromReversedStream,resize,size]
+paethPredictor call:[return]

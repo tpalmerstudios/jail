@@ -1,0 +1,8 @@
+setPosition
+setScale
+getPosition
+getCameraMatrix
+getScale
+getScreenWidth
+getScreenHeight
+main call:[run]
